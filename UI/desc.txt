@@ -1,0 +1,2 @@
+.png, .jpeg, .9.png
+.psd, .ai
