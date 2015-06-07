@@ -3,19 +3,34 @@ package org.sfbtmc;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.PopupMenu;
 
-public class MainPageActivity extends FragmentActivity {
+public class MainPageActivity extends FragmentActivity implements
+		OnClickListener {
 	private static FragmentManager fMgr;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_page);
-		
-		
+
 	}
 
-	//点击返回按钮
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.layout_title_menu_img:
+			MorePopWindow morePopWindow = new MorePopWindow(this);
+			morePopWindow.showPopupWindow(v);
+			break;
+		default:
+			break;
+		}
+	}
+
+	// 点击返回按钮
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();

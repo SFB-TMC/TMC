@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+<!--     common -->
+	<color name="title_background">#004d79</color>
     <color name="transparent">#00000000</color>
     <color name="white">#ffffff</color>
     <color name="red">#FF0000</color>
@@ -8,4 +9,10 @@
 	<color name="blue">#1e634c</color>
 	<color name="gray">#8f8f8f</color>
 
+	
+<!-- 	mainpage -->
+	<color name="popupwindow_divider_bg">#ef2f2f2f</color>
+	
+	
+	
 </resources>
