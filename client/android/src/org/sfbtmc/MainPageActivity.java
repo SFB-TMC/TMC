@@ -22,7 +22,7 @@ public class MainPageActivity extends FragmentActivity implements
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.layout_title_menu_img:
-			MorePopWindow morePopWindow = new MorePopWindow(this);
+			MainPageMenuPopWindow morePopWindow = new MainPageMenuPopWindow(this);
 			morePopWindow.showPopupWindow(v);
 			break;
 		default:
