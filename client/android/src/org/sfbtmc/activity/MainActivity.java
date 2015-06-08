@@ -1,5 +1,8 @@
-package org.sfbtmc;
+package org.sfbtmc.activity;
 
+import org.sfbtmc.R;
+import org.sfbtmc.R.id;
+import org.sfbtmc.R.layout;
 import org.sfbtmc.fragment.AddressFragment;
 import org.sfbtmc.fragment.FindFragment;
 import org.sfbtmc.fragment.MeFragment;

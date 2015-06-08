@@ -1,4 +1,6 @@
-package org.sfbtmc;
+package org.sfbtmc.widget;
+
+import org.sfbtmc.R;
 
 import android.app.Activity;
 import android.content.Context;

@@ -1,4 +1,9 @@
-package org.sfbtmc;
+package org.sfbtmc.activity;
+
+import org.sfbtmc.R;
+import org.sfbtmc.R.id;
+import org.sfbtmc.R.layout;
+import org.sfbtmc.widget.MainPageMenuPopWindow;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
