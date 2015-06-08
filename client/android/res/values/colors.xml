@@ -12,7 +12,7 @@
 	
 <!-- 	mainpage -->
 	<color name="popupwindow_divider_bg">#ef2f2f2f</color>
-	
-	
+	<color name="popupwindow_background">#004d79</color>
+	<color name="popupwindow_background_pressed">#008d79</color>
 	
 </resources>
