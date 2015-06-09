@@ -1,0 +1,71 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd
+						http://www.springframework.org/schema/mvc
+						http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<!-- 将@Component @Controller@Service等这些注解的类注册为bean -->
+	<context:component-scan base-package="org.tom.server.core.**.controller" />
+	
+	<context:component-scan base-package="org.tom.server.core.**.service.impl">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+	
+	<!-- scan for mappers and let them be autowired -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="org.tom.server.core.**.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"/>
+	</bean>
+	
+	<bean id="propsConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:META-INF/ToastmastersServicesWeb/config/config.properties</value>
+				<value>file:${user.home}/.settings/tom-config.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${datasource.driverClassName}" />
+		<property name="defaultAutoCommit" value="${datasource.defaultAutoCommit}" />
+		<property name="url" value="${datasource.url}" />
+		<property name="username" value="${datasource.username}" />
+		<property name="password" value="${datasource.password}" />
+	</bean>
+	
+	<!-- define the SqlSessionFactory -->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="sqlSessionTemplateBean" class="org.mybatis.spring.SqlSessionTemplate">  
+		 <constructor-arg index="0" ref="sqlSessionFactoryBean"/>
+    </bean>  
+	
+	<mvc:resources location="/img/" mapping="/img/**" /> 
+   	<mvc:resources location="/js/" mapping="/js/**" />
+   	<mvc:resources location="/css/" mapping="/css/**" />
+   	<mvc:resources location="/fonts/" mapping="/fonts/**" />
+   	
+   	<mvc:annotation-driven/>
+   	
+	<!-- Spring视图处理类 -->
+	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+ 		<property name="suffix">
+ 			<value>.jsp</value>
+ 		</property>
+ 	</bean>
+</beans>
