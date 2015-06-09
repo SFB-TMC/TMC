@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tom.server.core.index.mapper.IndexMapper">
+
+	<resultMap id="UserInfoResultMap" type="org.tom.server.core.user.domain.UserInfoVO">
+		<id column="ID" jdbcType="DECIMAL" property="id" />
+		<result column="ENNAME" jdbcType="VARCHAR" property="enName" />
+		<result column="CHNNAME" jdbcType="VARCHAR" property="chnName" />
+		<result column="CNO" jdbcType="VARCHAR" property="cno" />
+		<result column="AGE" jdbcType="DECIMAL" property="age" />
+		<result column="GENDER" jdbcType="DECIMAL" property="gender" />
+		<result column="ADDR" jdbcType="VARCHAR" property="addr" />
+		<result column="EMAIL" jdbcType="VARCHAR" property="email" />
+		<result column="TEL" jdbcType="VARCHAR" property="tel" />
+		<result column="IMAGE" property="image" javaType="byte[]" jdbcType="BLOB" typeHandler="org.apache.ibatis.type.BlobTypeHandler" />
+		<result column="ROLE_CODE" jdbcType="VARCHAR" property="roleCode" />
+		<result column="ROLE_NAME" jdbcType="VARCHAR" property="roleName" />
+		<result column="OFFICER_CODE" jdbcType="VARCHAR" property="officerCode" />
+		<result column="OFFICER_NAME" jdbcType="VARCHAR" property="officerName" />
+		<result column="AREA_CODE" jdbcType="VARCHAR" property="areaCode" />
+		<result column="AREA_NAME" jdbcType="VARCHAR" property="areaName" />
+		<result column="LOGIN_NAME" jdbcType="VARCHAR" property="loginName" />
+		<result column="LOGIN_PWD" jdbcType="VARCHAR" property="loginPwd" />
+		<result column="JOIN_DATE" jdbcType="VARCHAR" property="joinDate" />
+		<result column="CREATED_BY" jdbcType="DECIMAL" property="createdBy" />
+		<result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+		<result column="MODIFIED_BY" jdbcType="DECIMAL" property="modifiedBy" />
+		<result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+		<result column="STATUS" jdbcType="DECIMAL" property="status" />
+		<result column="REMARK" jdbcType="VARCHAR" property="remark" />
+		<result column="WECHAT" jdbcType="VARCHAR" property="wechat" />
+		<result column="ETNAME" jdbcType="VARCHAR" property="eduTitle" />
+	</resultMap>
+
+	<select id="queryUserInfoByMap" parameterType="java.util.Map" resultMap="UserInfoResultMap">
+		SELECT
+			A.ID, A.ENNAME, A.CHNNAME, A.CNO, A.AGE, A.GENDER, A.ADDR, A.EMAIL, A.TEL, 
+			A.ROLE_CODE, A.OFFICER_CODE, A.AREA_CODE, A.LOGIN_NAME, 
+			A.LOGIN_PWD, A.JOIN_DATE, A.CREATED_BY, A.CREATED_DATE, 
+			A.MODIFIED_BY, A.MODIFIED_DATE, A.STATUS, A.REMARK, B.ITEMNAME AS ROLE_NAME,
+			C.ITEMNAME AS OFFICER_NAME, D.ITEMNAME AS AREA_NAME, A.WECHAT, GROUP_CONCAT(E.ETNAME) AS ETNAME
+		FROM 
+			USER_INFO A
+		LEFT JOIN
+			CODE_LIBRARY B
+		ON 
+			B.ITEMNO = A.ROLE_CODE
+		AND 
+			B.CODENO = 'ROLEINFO'
+		LEFT JOIN
+			CODE_LIBRARY C
+		ON 
+			C.ITEMNO = A.OFFICER_CODE
+		AND 
+			C.CODENO = 'OFFICERINFO'
+		LEFT JOIN
+			CODE_LIBRARY D
+		ON 
+			D.ITEMNO = A.AREA_CODE
+		AND 
+			D.CODENO = 'AREAINFO'
+		LEFT JOIN 
+			EDU_TITLE_MAPPING E
+		ON 
+			E.USER_ID = A.ID
+		WHERE 
+			UPPER(LOGIN_NAME) = UPPER(#{username, jdbcType=VARCHAR})
+		AND 
+			LOGIN_PWD = #{password, jdbcType=VARCHAR}
+	</select>
+</mapper>

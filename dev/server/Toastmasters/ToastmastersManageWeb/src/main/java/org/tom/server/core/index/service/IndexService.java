@@ -6,7 +6,7 @@ import java.util.Map;
 public interface IndexService {
 
 	/**
-	 * 查询用户信息
+	 * search user information
 	 * @param map
 	 * @return
 	 * @throws SQLException

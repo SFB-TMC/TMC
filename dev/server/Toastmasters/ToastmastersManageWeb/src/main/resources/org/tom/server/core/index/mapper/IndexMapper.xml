@@ -2,30 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.tom.server.core.index.mapper.IndexMapper">
-	<!-- <resultMap id="UserInfoResultMap" type="org.store.core.ui.domain.UserInfoVO">
-		<id column="ID" jdbcType="DECIMAL" property="id" />
-		<result column="NAME" jdbcType="VARCHAR" property="name" />
-		<result column="GENDER" jdbcType="DECIMAL" property="gender" />
-		<result column="MOBILE" jdbcType="VARCHAR" property="mobile" />
-		<result column="ADDRESS" jdbcType="VARCHAR" property="address" />
-		<result column="INTRODUCE" jdbcType="VARCHAR" property="introduce" />
-		<result column="HEAD" jdbcType="VARCHAR" property="head" />
-		<result column="USERNAME" jdbcType="VARCHAR" property="username" />
-		<result column="PASSWORD" jdbcType="VARCHAR" property="password" />
-		<result column="CREATEDTIME" jdbcType="TIMESTAMP" property="createdTime" />
-		<result column="MODIFIEDTIME" jdbcType="TIMESTAMP" property="modifiedTime" />
-		<result column="PLATFORM" jdbcType="VARCHAR" property="platform" />
-		<result column="DEVICE" jdbcType="VARCHAR" property="device" />
-		<result column="EMAIL" jdbcType="VARCHAR" property="email" />
-		<result column="STATUS" jdbcType="DECIMAL" property="status" />
-		<result column="REMARK" jdbcType="VARCHAR" property="remark" />
-	</resultMap>
-	
-	<sql id="UserInfoColumnList">
-		ID, NAME, GENDER, MOBILE, ADDRESS, INTRODUCE, HEAD, USERNAME, 
-			PASSWORD, CREATEDTIME, MODIFIEDTIME, PLATFORM, DEVICE, EMAIL, REMARK, STATUS
-	</sql> -->
-	
 	<select id="queryUserInfoByMap" parameterType="java.util.Map" resultType="java.lang.Integer">
 		SELECT 
 			COUNT(1) 
