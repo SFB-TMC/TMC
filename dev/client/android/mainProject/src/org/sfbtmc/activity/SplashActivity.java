@@ -72,9 +72,9 @@ public class SplashActivity extends FragmentActivity implements
 
 	}
 
-	// 点击返回按钮
-	// @Override
-	// public void onBackPressed() {
-	//
-	// }
+//	 点击返回按钮
+	 @Override
+	 public void onBackPressed() {
+	
+	 }
 }

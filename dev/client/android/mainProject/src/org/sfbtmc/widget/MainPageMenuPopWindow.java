@@ -7,11 +7,13 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.PopupWindow;
   
-public class MainPageMenuPopWindow extends PopupWindow {  
+public class MainPageMenuPopWindow extends PopupWindow implements OnClickListener{
     private View conentView;  
+    private OnPopMenuClickListener onMenuClickListener;
   
     public MainPageMenuPopWindow(final Activity context) {  
         LayoutInflater inflater = (LayoutInflater) context  
@@ -36,8 +38,13 @@ public class MainPageMenuPopWindow extends PopupWindow {
         this.setBackgroundDrawable(dw);  
         // mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);  
         // 设置SelectPicPopupWindow弹出窗体动画效果  
-        this.setAnimationStyle(R.style.AnimationPreview);  
-  
+        this.setAnimationStyle(R.style.AnimationPreview); 
+        
+        
+        conentView.findViewById(R.id.mainpage_pop_menu_exit).setOnClickListener(this);
+        conentView.findViewById(R.id.mainpage_pop_menu_one).setOnClickListener(this);
+        conentView.findViewById(R.id.mainpage_pop_menu_two).setOnClickListener(this);
+        
     }  
   
     public void showPopupWindow(View parent) {  
@@ -47,4 +54,29 @@ public class MainPageMenuPopWindow extends PopupWindow {
             this.dismiss();  
         }  
     }  
+    
+    
+    public OnPopMenuClickListener getOnMenuClickListener() {
+		return onMenuClickListener;
+	}
+
+	public void setOnMenuClickListener(OnPopMenuClickListener onMenuClickListener) {
+		this.onMenuClickListener = onMenuClickListener;
+	}
+
+
+	public interface OnPopMenuClickListener{
+    	public void onClickMenu(View clickedMenu);
+    	
+    }
+
+
+	@Override
+	public void onClick(View arg0) {
+		if(null == onMenuClickListener){
+			return;
+		}
+		
+		onMenuClickListener.onClickMenu(arg0);
+	}
 }  

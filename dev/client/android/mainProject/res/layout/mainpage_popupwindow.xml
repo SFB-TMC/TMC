@@ -21,6 +21,7 @@
             android:background="@color/popupwindow_divider_bg" />
 
         <LinearLayout
+            android:id="@+id/mainpage_pop_menu_one"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/mainpage_pop_menu_selector"
@@ -43,7 +44,7 @@
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="wwj"
+                    android:text="Agenda"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
@@ -62,6 +63,7 @@
             android:background="@color/popupwindow_divider_bg" />
 
         <LinearLayout
+            android:id="@+id/mainpage_pop_menu_two"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/mainpage_pop_menu_selector"
@@ -80,7 +82,7 @@
                 android:layout_height="fill_parent"
                 android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:text="Menu one"
+                android:text="View Article"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -177,6 +179,7 @@
             android:background="@color/popupwindow_divider_bg" />
 
         <LinearLayout
+            android:id="@+id/mainpage_pop_menu_exit"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/mainpage_pop_menu_selector"
@@ -190,7 +193,7 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/btn_star_big_on" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
