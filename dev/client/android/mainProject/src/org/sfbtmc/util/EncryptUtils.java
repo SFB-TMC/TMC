@@ -1,10 +1,9 @@
 package org.sfbtmc.util;
 
 /**
- * Encryption
- * @author Administrator
+ *  * Encryption
  *
  */
 public class EncryptUtils {
-
+	
 }
