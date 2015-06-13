@@ -4,6 +4,6 @@ package org.sfbtmc.util;
  *  * Encryption
  *
  */
-public class EncryptUtils {
+public class TmcEncryptUtils {
 	
 }

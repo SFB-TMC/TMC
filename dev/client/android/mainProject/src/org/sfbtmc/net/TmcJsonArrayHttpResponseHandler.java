@@ -1,10 +1,11 @@
 package org.sfbtmc.net;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
 
-public class TmcJsonHttpResponseHandler extends JsonHttpResponseHandler {
+public class TmcJsonArrayHttpResponseHandler extends JsonHttpResponseHandler {
 
 	
 	public void onTmcFailure(int statusCode,
@@ -13,9 +14,7 @@ public class TmcJsonHttpResponseHandler extends JsonHttpResponseHandler {
 	}
 
 	public void onTmcSuccess(int statusCode,
-			JSONObject response) {
-		
+			JSONArray responseArr) {
 	}
-
 	
 }
