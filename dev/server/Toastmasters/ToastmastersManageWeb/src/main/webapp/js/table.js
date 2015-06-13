@@ -92,6 +92,7 @@ function createTable() {
 		table += "<option value=\"1\">Send Email</option>";
 		table += "</select>";
 		table += "<button type=\"submit\" class=\"button blue-gradient glossy\">Go</button>";
+		table += "<button type=\"button\" class=\"button blue-gradient glossy\" onclick=\"openUserFrame();\">Add User</button>";
 		table += "</div>";
 		table += "<table class='table responsive-table' id='dataTable' width='100%' border='0' cellspacing='0' cellpadding='0' ><thead>";// table构造开始
 		table += "<tr >";// 构造列表头
@@ -158,10 +159,11 @@ function createTable() {
 		table += "<option value=\"1\">Send Email</option>";
 		table += "</select>";
 		table += "<button type=\"submit\" disabled=\"disabled\" class=\"button blue-gradient glossy\">Go</button>";
+		table += "<button type=\"button\" class=\"button blue-gradient glossy\">Add User</button>";
 		table += "</div>";
 		table += "<table width='100%' border='0' cellspacing='0' cellpadding='0'>";
 		table += "<tr>";
-		table += "<td width='50%' style='padding-top: 50px; padding-bottom: 50px;' height='100' align='right'><img width='100' src='../img/100.png' /></td>";
+		table += "<td width='50%' style='padding-top: 50px; padding-bottom: 50px;' height='100' align='right'><img width='100' src='../../img/100.png' /></td>";
 		table += "<td width='50%' style='vertical-align: middle; font-size:20px; line-height: 45px; padding-left: 20px;' align='left'>没有搜索到结果!</td>";
 		table += "</tr>";
 		table += "</table>";

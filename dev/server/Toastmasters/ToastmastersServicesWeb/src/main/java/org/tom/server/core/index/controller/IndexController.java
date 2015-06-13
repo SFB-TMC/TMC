@@ -43,7 +43,7 @@ public class IndexController extends AbstractController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	@ResponseBody
-	public UserInfoVO login(
+	public Map<String, Object> login(
 			@RequestParam(value="username", required=true) String username,
 			@RequestParam(value="password", required=true) String password, HttpSession httpSession) {
 		
@@ -54,7 +54,16 @@ public class IndexController extends AbstractController {
 		map.put("password", encryptPwd);
 		
 		UserInfoVO userInfoVO = indexService.queryUserInfoByMap(map);
-		return userInfoVO;
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		if (userInfoVO != null) {
+			resultMap.put("status", 0);
+			resultMap.put("data", userInfoVO);
+		} else {
+			resultMap.put("status", -1);
+			resultMap.put("data", "µ«¬º ß∞‹£¨«ÎºÏ≤È”√ªß√˚√‹¬Î£°");
+		}
+		
+		return resultMap;
 	}
 	
 	/**
@@ -63,7 +72,8 @@ public class IndexController extends AbstractController {
 	 */
 	@InitBinder("user")    
     public void initBinder(WebDataBinder binder) {    
-            binder.setFieldDefaultPrefix("user.");    
+		
+		binder.setFieldDefaultPrefix("user.");    
     }  
 	
 	/**
