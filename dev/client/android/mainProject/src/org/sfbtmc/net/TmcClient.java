@@ -17,19 +17,21 @@ import com.loopj.android.http.RequestParams;
  * 
  */
 public class TmcClient extends AsyncHttpClient{
+	private static TmcClient tmcClient = null;  
+	
 	private final String TAG = "TmcClient"; 
-	private TmcJsonHttpResponseHandler responseHandler = null;
-	private TmcJsonArrayHttpResponseHandler respArrayHandler = null;
+	private TmcJsonHttpResponseHandler tmcRespJsonHandler = null;
+	private TmcJsonArrayHttpResponseHandler tmcRespJsonArrayHandler = null;
 	private JsonHttpResponseHandler jsonHandler = null;
 	
-	public TmcClient(){
+	private TmcClient(){
 		jsonHandler = new JsonHttpResponseHandler(){
 
 			@Override
 			public void onFailure(int statusCode, Header[] headers,
 					Throwable throwable, JSONObject errorResponse) {
 				TmcLogUtils.e(TAG, "onFailure");
-				responseHandler.onTmcFailure(statusCode, throwable, errorResponse);
+				tmcRespJsonHandler.onTmcFailure(statusCode, throwable, errorResponse);
 			}
 
 			@Override
@@ -40,24 +42,32 @@ public class TmcClient extends AsyncHttpClient{
 					TmcLogUtils.e(TAG, "server return -1,that is tell us that something is wrong");
 					return;
 				}
-				if(null != responseHandler){
-					responseHandler.onTmcSuccess(statusCode, response.optJSONObject("data"));
+				if(null != tmcRespJsonHandler){
+					tmcRespJsonHandler.onTmcSuccess(statusCode, response.optJSONObject("data"));
 				}else{
-					respArrayHandler.onTmcSuccess(statusCode, response.optJSONArray("data"));
+					tmcRespJsonArrayHandler.onTmcSuccess(statusCode, response.optJSONArray("data"));
 				}
 			}
 		};
 	}
+	
+	
+	public static TmcClient getInstance(){
+		if(null == tmcClient){
+			tmcClient = new TmcClient();
+		}
+		return tmcClient;
+	}
 
 	public RequestHandle tmcPost(String url, RequestParams params,
 			TmcJsonHttpResponseHandler respHandler) {
-		this.responseHandler = respHandler;
+		this.tmcRespJsonHandler = respHandler;
 		return super.post(url, params, jsonHandler);
 	}
 	
 	public RequestHandle tmcPost(String url, RequestParams params,
 			TmcJsonArrayHttpResponseHandler respHandler) {
-		this.respArrayHandler = respHandler;
+		this.tmcRespJsonArrayHandler = respHandler;
 		return super.post(url, params, jsonHandler);
 	}
 	
