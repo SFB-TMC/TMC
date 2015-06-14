@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tom.server.core.menu.mapper.MenuInfoMapper">
+	<resultMap type="org.tom.server.core.menu.domain.MenuInfoVO" id="MenuInfoResultMap">
+		<id column="ID" jdbcType="DECIMAL" property="id" />
+		<result column="MENUCODE" jdbcType="VARCHAR" property="menuCode" />
+		<result column="MENUNAME" jdbcType="VARCHAR" property="menuName" />
+		<result column="MENUURL" jdbcType="VARCHAR" property="menuURL" />
+		<result column="MENUCSS" jdbcType="VARCHAR" property="menucss" />
+		<result column="MENUTITLE" jdbcType="VARCHAR" property="menuTitle" />
+		<result column="MENUDESC" jdbcType="VARCHAR" property="menuDesc" />
+		<result column="CREATED_BY" jdbcType="DECIMAL" property="createdBy" />
+		<result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+		<result column="MODIFIED_BY" jdbcType="DECIMAL" property="modifiedBy" />
+		<result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+		<result column="STATUS" jdbcType="DECIMAL" property="status" />
+		<result column="REMARK" jdbcType="VARCHAR" property="remark" />
+	</resultMap>
+	
+	<select id="queryMenuInfoByMap" parameterType="java.util.Map" resultMap="MenuInfoResultMap">
+		SELECT 
+			A.ID, A.MENUCODE, A.MENUNAME, A.MENUURL, A.MENUCSS, 
+			A.MENUTITLE, A.MENUDESC, A.CREATED_BY, A.CREATED_DATE, 
+			A.MODIFIED_BY, A.MODIFIED_DATE, A.STATUS, A.REMARK 
+		FROM 
+			MENU_INFO A
+		INNER JOIN 
+			USER_MENU_RIGHT B
+		ON 
+			B.MENUCODE = A.MENUCODE
+		WHERE 
+			UPPER(B.LOGIN_NAME) = UPPER(#{loginName, jdbcType=VARCHAR})
+	</select>
+</mapper>

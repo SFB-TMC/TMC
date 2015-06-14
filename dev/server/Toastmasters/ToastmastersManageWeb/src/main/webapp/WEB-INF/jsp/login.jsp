@@ -75,7 +75,7 @@
 	<meta name="msapplication-task" content="name=My profile;action-uri=http://www.display-inline.fr/demo/developr/profile.html;icon-uri=http://www.display-inline.fr/demo/developr/img/favicons/favicon.ico">
 </head>
 
-<body>
+<body onload="javascript: document.getElementById('username').focus();">
 
 	<div id="container">
 
@@ -164,7 +164,7 @@
 							async: false,
 							success: function(data) {
 								if (data.res) {
-									document.location.href = '<%=WEBPATH %>/tmw/home';
+									document.location.href = '<%=WEBPATH %>/tmw/menu/home';
 								} else {
 									formLogin.clearMessages();
 									displayError('Error Login Information, please try again');
