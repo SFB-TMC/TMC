@@ -26,7 +26,6 @@ public class SplashActivity extends FragmentActivity implements
 
 	private Handler handler;
 	
-	private Button btnTest;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +34,6 @@ public class SplashActivity extends FragmentActivity implements
 		setContentView(R.layout.activity_splash);
 
 		imgLogo = (ImageView) findViewById(R.id.activity_splash_logo_img);
-		btnTest = (Button) findViewById(R.id.btn_test);
-		btnTest.setOnClickListener(this);
 		
 		// 初始化
 		 TranslateAnimation translateAnimation = new TranslateAnimation(0, 0,
@@ -97,9 +94,6 @@ public class SplashActivity extends FragmentActivity implements
 	@Override
 	public void onClick(View arg0) {
 		int viewId = arg0.getId();
-		if(viewId == R.id.btn_test){
-		}
-		
 		
 	}
 }
