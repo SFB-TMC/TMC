@@ -1,57 +1,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="5dp"
     android:background="#EBEBEB"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="Outing is always our favourite!" />
+    <include layout="@layout/layout_doc_detail_title" />
 
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:textColor="#777D8B"
-        android:layout_marginTop="5dp"
-        android:text="2015-06-06 18:00:00" />
+    <ScrollView style="@style/common_layout_scroll_view" >
 
-    <ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        <LinearLayout style="@style/common_list_in_scroll_view" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-            
-	        <TextView
-		        android:id="@+id/detail_content1"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:textSize="15sp"
-		        android:text="" />
+            <TextView
+                style="@style/common_page_title"
+                android:text="Outing is always our favourite!" />
 
-	        <ImageView
-	            android:id="@+id/imageView1"
-	            android:layout_width="wrap_content"
-	            android:layout_height="200dp"
-	            android:scaleType="fitXY"
-	            android:src="@drawable/docdetail_1" />
+            <TextView
+                style="@style/common_page_datetime"
+                android:text="2015-06-09 19:00:00" />
 
-	        <TextView
-		        android:id="@+id/detail_content2"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:textSize="15sp"
-		        android:text="" />
-	        
+            <TextView
+                android:id="@+id/detail_content1"
+                style="@style/common_page_text"
+                android:text="askldfjlasjdf asdf asldfalsdfk\n\nlasdkjflasdjfkajsdlfkjasdf\nasdfasdfasdf" />
+
+            <ImageView android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="224dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/doc_img" />
+
+            <TextView
+                android:id="@+id/detail_content2"
+                style="@style/common_page_text" />
         </LinearLayout>
     </ScrollView>
 

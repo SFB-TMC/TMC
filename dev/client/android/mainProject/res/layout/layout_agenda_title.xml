@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/title_bar_layout" >
+
+    <ImageView
+        android:id="@+id/layout_title_menu_back"
+        style="@style/icon_back" />
+
+    <TextView
+        style="@style/title_bar_title"
+        android:text="@string/title_activity_agenda" />
+
+    <ImageView
+        android:id="@+id/layout_title_menu_img"
+        style="@style/icon_menu" />
+
+</RelativeLayout>

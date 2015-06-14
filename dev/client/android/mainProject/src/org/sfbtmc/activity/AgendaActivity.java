@@ -14,13 +14,16 @@ public class AgendaActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_agenda);
 	}
-	
-	public void onClick(View view){
+
+	public void onClick(View view) {
 		switch (view.getId()) {
-		case R.id.agendaMenu:
-			MainPageMenuPopWindow morePopWindow = new MainPageMenuPopWindow(this);
-			morePopWindow.showPopupWindow(view);
-			break;
+			case R.id.layout_title_menu_back:
+				super.onBackPressed();
+				break;
+			case R.id.layout_title_menu_img:
+				MainPageMenuPopWindow morePopWindow = new MainPageMenuPopWindow(this);
+				morePopWindow.showPopupWindow(view);
+				break;
 		}
 	}
 }
