@@ -44,8 +44,6 @@ public class SplashActivity extends FragmentActivity implements
 		 //设置动画时间
 		 translateAnimation.setDuration(1000);
 		 translateAnimation.setAnimationListener(this);
-
-		 
 		 
 		 translateAnimation.setFillAfter(true);
 		 imgLogo.startAnimation(translateAnimation);
@@ -60,11 +58,10 @@ public class SplashActivity extends FragmentActivity implements
 		
 	}
 
-	private void toMainActivity() {
-//		Intent in = new Intent(this, MainPageActivity.class);
-//		startActivity(in);
-//
-//		this.finish();
+	private void toLoginActivity() {
+		Intent in = new Intent(this, LoginActivity.class);
+		startActivity(in);
+		this.finish();
 	}
 
 	@Override
@@ -72,7 +69,7 @@ public class SplashActivity extends FragmentActivity implements
 		handler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				toMainActivity();
+				toLoginActivity();
 			}
 
 		}, 500);
@@ -101,21 +98,6 @@ public class SplashActivity extends FragmentActivity implements
 	public void onClick(View arg0) {
 		int viewId = arg0.getId();
 		if(viewId == R.id.btn_test){
-			TmcClient client = TmcClient.getInstance();
-			RequestParams param = new RequestParams();
-			param.put("username", "admin");
-			param.put("password", "123456");
-			param.put("device", "Android");
-			
-			client.tmcPost("http://54.64.18.163:8080/ToastmastersServicesWeb/tmw/login", param , new TmcJsonHttpResponseHandler(){
-				@Override
-				public void onTmcSuccess(int statusCode, JSONObject response) {
-					super.onTmcSuccess(statusCode, response);
-					
-					TmcLogUtils.d(response.toString());
-					
-				}
-			});
 		}
 		
 		

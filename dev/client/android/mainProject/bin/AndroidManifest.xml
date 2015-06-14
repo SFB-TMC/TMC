@@ -38,6 +38,13 @@
             android:name="org.sfbtmc.activity.MainPageActivity"
             android:label="@string/app_name" >
         </activity>
+        
+        <activity
+            android:name="org.sfbtmc.activity.LoginActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        
         <activity
             android:name="org.sfbtmc.activity.MainActivity"
             android:label="@string/app_name" >
