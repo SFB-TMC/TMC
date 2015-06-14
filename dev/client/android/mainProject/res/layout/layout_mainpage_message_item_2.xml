@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="110dp"
-    android:layout_margin="2dp"
+    android:layout_height="88dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="5dp"
     android:background="#f6f6f6"
     android:orientation="horizontal"
     android:padding="4dp" >
@@ -37,23 +39,21 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="2dp"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:layout_alignParentTop="true"
             android:text="Let's Go Hiking! YEAH! Another style"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
+            android:textColor="#333333" />
         
-         <TextView
+        <TextView
             android:id="@+id/layout_mainpage_message_item_when"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:textSize="14sp"
+            android:textSize="8sp"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:text="2015-06-06 20:13:14"
-            android:textColor="@color/black" />
-        
+            android:textColor="#333333" />
        
         <TextView
             android:layout_below="@id/layout_mainpage_message_item_title"
@@ -63,10 +63,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="2dp"
-            android:textSize="16sp"
+            android:textSize="12sp"
             android:maxLines="3"
+            android:textColor="#bbbbbb"
             android:text="Dear fellow ToastMasters,let's go hiking.We love it ^()^~~~~"
-            android:textColor="@color/gray" />
+            />
        
         
         
