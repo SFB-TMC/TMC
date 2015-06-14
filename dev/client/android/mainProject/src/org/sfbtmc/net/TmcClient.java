@@ -31,7 +31,7 @@ public class TmcClient extends AsyncHttpClient{
 			public void onFailure(int statusCode, Header[] headers,
 					Throwable throwable, JSONObject errorResponse) {
 				TmcLogUtils.e(TAG, "onFailure");
-				tmcRespJsonHandler.onTmcFailure(statusCode, throwable, errorResponse);
+				tmcRespJsonHandler.onRequestError(statusCode, throwable, errorResponse);
 			}
 
 			@Override
@@ -40,6 +40,9 @@ public class TmcClient extends AsyncHttpClient{
 				int status = response.optInt("status",-1);
 				if(0 != status){ //server tell us that something is wrong.
 					TmcLogUtils.e(TAG, "server return -1,that is tell us that something is wrong");
+					
+					tmcRespJsonHandler.onTmcFailure(statusCode,response);
+					
 					return;
 				}
 				if(null != tmcRespJsonHandler){
