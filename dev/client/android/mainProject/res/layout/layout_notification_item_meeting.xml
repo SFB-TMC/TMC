@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/notification_page_item_layout" >
+
+    <TextView
+        style="@style/notification_page_item_category_meeting"
+        android:text="MEETING" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/layout_mainpage_message_item_icon"
+            style="@style/notification_page_item_image" />
+
+        <LinearLayout style="@style/notification_page_item_text_layout" >
+
+            <TextView
+                style="@style/notification_page_item_title"
+                android:text="S.F.B TMC No.188 Meeting" />
+
+            <TextView
+                style="@style/notification_page_item_abstract"
+                android:text="Theme: Dream\n10th Floor, Jun 18, 2015 18:50" />
+
+            <TextView
+                style="@style/notification_page_item_datetime"
+                android:text="2015-06-06 18:08:08" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
