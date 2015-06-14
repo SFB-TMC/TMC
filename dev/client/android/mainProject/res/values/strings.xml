@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_agenda">Meeting</string>
     <string name="title_activity_doc_detail">Detail Document</string>
+    <string name="title_activity_notification">Notification</string>
 
 </resources>
