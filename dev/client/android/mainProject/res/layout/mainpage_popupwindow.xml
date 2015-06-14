@@ -1,209 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:gravity="center_horizontal"
-    android:orientation="vertical" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/menu_layout">
 
-    <LinearLayout
-        android:id="@+id/pop_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/popupwindow_background"
-        android:gravity="center_horizontal"
-        android:orientation="vertical" >
+	<LinearLayout style="@style/menu_row" android:id="@+id/mainpage_pop_menu_notification">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Notification" />
+	</LinearLayout>
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/popupwindow_divider_bg" />
+	<View style="@style/menu_h_line" />
 
-        <LinearLayout
-            android:id="@+id/mainpage_pop_menu_one"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mainpage_pop_menu_selector"
-            android:clickable="true"
-            android:orientation="horizontal"
-            android:padding="8dp" >
+	<LinearLayout style="@style/menu_row" android:id="@+id/mainpage_pop_menu_special_column">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Special Column" />
+	</LinearLayout>
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/btn_star_big_off" />
+	<View style="@style/menu_h_line" />
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left|center_horizontal"
-                android:orientation="vertical"
-                android:padding="5dp" >
+	<LinearLayout style="@style/menu_row" android:id="@+id/mainpage_pop_menu_agenda">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Agenda" />
+	</LinearLayout>
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Agenda"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
+	<View style="@style/menu_h_line" />
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="whatswwj"
-                    android:textColor="@color/red"
-                    android:textSize="15sp" />
-            </LinearLayout>
-        </LinearLayout>
+	<LinearLayout style="@style/menu_row" android:id="@+id/mainpage_pop_menu_doc">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="View Article" />
+	</LinearLayout>
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/popupwindow_divider_bg" />
+	<View style="@style/menu_h_line" />
 
-        <LinearLayout
-            android:id="@+id/mainpage_pop_menu_two"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mainpage_pop_menu_selector"
-            android:clickable="true"
-            android:orientation="horizontal"
-            android:padding="8dp" >
+	<LinearLayout style="@style/menu_row" android:id="@+id/mainpage_pop_menu_2">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Menu two" />
+	</LinearLayout>
 
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/btn_star_big_off_disable" />
+	<View style="@style/menu_h_line" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:text="View Article"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-        </LinearLayout>
+	<LinearLayout style="@style/menu_row" android:id="@+id/mainpage_pop_menu_3">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Menu Three" />
+	</LinearLayout>
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/popupwindow_divider_bg" />
+	<View style="@style/menu_h_line" />
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mainpage_pop_menu_selector"
-            android:clickable="true"
-            android:orientation="horizontal"
-            android:padding="8dp" >
+	<LinearLayout style="@style/menu_row" android:id="@+id/mainpage_pop_menu_exit">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Exit" />
+	</LinearLayout>
 
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/btn_star_big_off_disable_focused" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:text="Menu two"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-        </LinearLayout>
-        <!-- <View -->
-        <!-- android:layout_width="fill_parent" -->
-        <!-- android:layout_height="1dp" -->
-        <!-- android:background="@color/popupwindow_divider_bg" /> -->
-        <!-- <LinearLayout -->
-        <!-- android:layout_width="fill_parent" -->
-        <!-- android:layout_height="wrap_content" -->
-        <!-- android:orientation="horizontal" -->
-        <!-- android:padding="8dp" -->
-        <!-- android:visibility="gone" > -->
-
-
-        <!-- <ImageView -->
-        <!-- android:layout_width="35dp" -->
-        <!-- android:layout_height="35dp" -->
-        <!-- android:scaleType="fitCenter" -->
-        <!-- android:src="@drawable/btn_star_big_off_pressed" /> -->
-
-
-        <!-- <TextView -->
-        <!-- android:layout_width="wrap_content" -->
-        <!-- android:layout_height="fill_parent" -->
-        <!-- android:layout_marginLeft="10dp" -->
-        <!-- android:gravity="center" -->
-        <!-- android:text="我的银行卡" -->
-        <!-- android:textColor="@color/white" -->
-        <!-- android:textSize="15sp" /> -->
-        <!-- </LinearLayout> -->
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/popupwindow_divider_bg" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mainpage_pop_menu_selector"
-            android:clickable="true"
-            android:orientation="horizontal"
-            android:padding="8dp" >
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/btn_star_big_off_selected" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:text="Menu Three"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@color/popupwindow_divider_bg" />
-
-        <LinearLayout
-            android:id="@+id/mainpage_pop_menu_exit"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/mainpage_pop_menu_selector"
-            android:clickable="true"
-            android:orientation="horizontal"
-            android:padding="8dp" >
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/btn_star_big_on" />
-
-            <TextView
-                android:id="@+id/btn_cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:layout_marginLeft="10dp"
-                android:background="@null"
-                android:gravity="center"
-                android:text="Exit"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-        </LinearLayout>
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

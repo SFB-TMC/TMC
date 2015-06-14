@@ -19,16 +19,17 @@
         <RelativeLayout
             android:id="@+id/activity_main_viewpager_layout"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:background="@drawable/mainpage_pic" >
+            android:layout_height="139dp"
+            android:background="@drawable/pic_home_01" >
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="84dp"
             android:orientation="vertical"
-            android:paddingLeft="4dp"
-            android:paddingRight="2dp" >
+            android:paddingTop="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
 
             <TextView
                 android:id="@+id/activity_main_activity_title"
@@ -37,8 +38,8 @@
                 android:layout_margin="1dp"
                 android:maxLines="1"
                 android:text="Let&apos;s Go Swimming!"
-                android:textColor="@color/red"
-                android:textSize="20sp" />
+                android:textColor="#de0304"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/activity_main_activity_simple_detail"
@@ -46,8 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:text="Come on, guys! Summer is a very good season for swimming. Besides,it is every good for health. COME ON JOIN US!"
-                android:textColor="@color/black"
-                android:textSize="14sp"
+                android:textColor="#353535"
+                android:textSize="12sp"
                 android:textStyle="italic" />
 
             <TextView
@@ -56,29 +57,23 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="1dp"
                 android:text="Time: June 18,2015 16:00 "
-                android:textColor="@color/blue"
-                android:textSize="16sp" />
+                android:textColor="#004f7b"
+                android:textSize="12sp"
+                android:textStyle="italic" />
 
-            <TextView
-                android:id="@+id/activity_main_activity_where"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="1dp"
-                android:text="Addr: 1258 old tree coffee "
-                android:textColor="@color/blue"
-                android:textSize="16sp" />
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#8f8f8f8f" />
+            android:layout_height="0.5dp"
+            android:background="#003857" />
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="2dp"
+        android:paddingTop="5dp"
+        android:background="#ebebeb"
         android:layout_below="@id/activity_main_comment_layout" >
 
         <LinearLayout
@@ -89,9 +84,11 @@
             <include layout="@layout/layout_mainpage_message_item"/>
             <include layout="@layout/layout_mainpage_message_item_2"/>
             <include layout="@layout/layout_mainpage_message_item"/>
+            <include layout="@layout/layout_mainpage_message_item_2"/>
             <include layout="@layout/layout_mainpage_message_item"/>
             <include layout="@layout/layout_mainpage_message_item_2"/>
             <include layout="@layout/layout_mainpage_message_item"/>
+            <include layout="@layout/layout_mainpage_message_item_2"/>
             
         </LinearLayout>
     </ScrollView>

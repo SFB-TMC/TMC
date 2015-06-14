@@ -1,15 +1,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/title_background"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/title_background" >
 
-    <ImageView android:id="@+id/activity_splash_logo_img"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test Btn"/>
+        
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/activity_splash_logo_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/symbio_logo"
         android:layout_centerInParent="true"
-        />
-<!-- android:layout_alignParentBottom="true" -->
-<!--         android:layout_centerHorizontal="true" -->
+        android:src="@drawable/symbio_logo" />
+    <!-- android:layout_alignParentBottom="true" -->
+    <!-- android:layout_centerHorizontal="true" -->
+
 </RelativeLayout>

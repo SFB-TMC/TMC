@@ -8,8 +8,10 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.tom.server.core.index.domain.LoginLogVO;
 import org.tom.server.core.index.mapper.IndexMapper;
 import org.tom.server.core.index.service.IndexService;
+import org.tom.server.core.user.domain.UserInfoVO;
 
 @Service("indexService")
 @Transactional(rollbackFor = Exception.class)
@@ -20,24 +22,35 @@ public class IndexServiceImpl implements IndexService {
 	@Autowired
 	private IndexMapper indexMapper;
 
-	public boolean queryUserInfoByMap(Map<String, Object> map) {
+	public UserInfoVO queryUserInfoByMap(Map<String, Object> map) {
 		
 		logger.info("Start Query Login Info...");
 		try {
-			int count = indexMapper.queryUserInfoByMap(map);
-			if (count == 0) {
+			UserInfoVO vo = indexMapper.queryUserInfoByMap(map);
+			if (vo == null) {
 				logger.info("Couldn't find any login info...");
 				logger.info("End Query Login Info...");
-				return false;
+				return null;
 			} else {
 				logger.info("End Query Login Info...");
-				return true;
+				return vo;
 			}
 		} catch (SQLException e) {
 			logger.error(e.getLocalizedMessage());
 			logger.info("End Query Login Info...");
-			return false;
+			return null;
 		}
 	}
 
+	public boolean insertLoginLog(LoginLogVO loginLogVO) {
+		
+		try {
+			indexMapper.insertLoginLog(loginLogVO);
+		} catch (SQLException e) {
+			logger.error(e.getLocalizedMessage());
+			return false;
+		}
+		
+		return true;
+	}
 }

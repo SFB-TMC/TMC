@@ -86,7 +86,7 @@
 
 	<!-- Title bar -->
 	<header role="banner" id="title-bar">
-		<h2>Toastmasters Web</h2>
+		<h2>Toastmasters Web -- ${userInfo.enName }(${userInfo.chnName })</h2>
 	</header>
 
 	<!-- Button to open/hide menu -->
@@ -307,53 +307,30 @@
 								<h4>Next month event</h4>
 								<p>Another description text</p>
 							</li>
-
 						</ul>
-
 					</div>
-
-					<!-- <div class="facts clearfix">
-
-						<div class="fact">
-							<span class="fact-value">
-								50 <span class="fact-unit">Min</span>
-							</span>
-							Average time per session<br>
-							<span class="fact-progress red">-5% ▼</span>
-						</div>
-
-						<div class="fact">
-							<span class="fact-value">
-								25 <span class="fact-unit">%</span>
-							</span>
-							Traffic growth over 30 days<br>
-							<span class="fact-progress green">+7.1% ▲</span>
-						</div>
-
-					</div> -->
-
-					<!-- <div class="button-height wrapped align-right">
-						<span class="float-left mid-margin-left">Want some modals?</span>
-						<span class="button-group">
-							<a href="javascript:openAlert();" class="button">Alert</a>
-							<a href="javascript:openPrompt();" class="button">Prompt</a>
-							<a href="javascript:openConfirm();" class="button">Confirm</a>
-						</span>
-					</div> -->
-
 				</div>
-
 			</div>
-
 		</div>
-
 	</section>
 	<!-- End main content -->
 
 	<!-- Side tabs shortcuts -->
 	<ul id="shortcuts" role="complementary" class="children-tooltip tooltip-right">
-		<li class="current"><a href="<%=WEBPATH %>/tmw/home" class="shortcut-dashboard" title="Dashboard">Dashboard</a></li>
-		<li><a href="<%=WEBPATH %>/tmw/user" class="shortcut-contacts" title="Users">Users</a></li>
+		<c:forEach items="${menuList}" var="p">
+			<c:choose>
+				<c:when test="${p.menuName == 'Dashboard'}">
+					<li class="current">
+				</c:when>
+				<c:otherwise>
+					<li>
+				</c:otherwise>
+			</c:choose>
+			<a href="<%=WEBPATH %>${p.menuURL }" class="${p.menucss }" title="${p.menuTitle }">${p.menuName }</a>
+			</li>
+		</c:forEach>
+		
+		
 		<!-- <li><a href="agenda.html" class="shortcut-agenda" title="Agenda">Agenda</a></li>
 		<li><a href="tables.html" class="shortcut-contacts" title="Contacts">Contacts</a></li>
 		<li><a href="explorer.html" class="shortcut-medias" title="Medias">Medias</a></li>
@@ -369,13 +346,13 @@
 		<div id="menu-content">
 
 			<header>
-				Administrator
+				${userInfo.enName }(${userInfo.chnName })
 			</header>
 
 			<div id="profile">
 				<img src="<%=WEBPATH %>/img/user.png" width="64" height="64" alt="User name" class="user-icon">
 				Hello
-				<span class="name">Admin</b></span>
+				<span class="name"><b>Admin</b></span>
 			</div>
 
 			<!-- By default, this section is made for 4 icons, see the doc to learn how to change this, in "basic markup explained" -->

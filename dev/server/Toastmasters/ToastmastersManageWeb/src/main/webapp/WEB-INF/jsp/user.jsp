@@ -23,6 +23,8 @@
 	<link rel="stylesheet" href="<%=WEBPATH %>/css/reset.css?v=1">
 	<link rel="stylesheet" href="<%=WEBPATH %>/css/style.css?v=1">
 	<link rel="stylesheet" href="<%=WEBPATH %>/css/colors.css?v=1">
+	<link rel="stylesheet" href="<%=WEBPATH %>/css/styles/modal.css?v=1">
+	
 	<link rel="stylesheet" media="print" href="<%=WEBPATH %>/css/print.css?v=1">
 	<!-- For progressively larger displays -->
 	<link rel="stylesheet" media="only all and (min-width: 480px)" href="<%=WEBPATH %>/css/480.css?v=1">
@@ -77,7 +79,7 @@
 
 	<!-- Title bar -->
 	<header role="banner" id="title-bar">
-		<h2>Toastmasters Web</h2>
+		<h2>Toastmasters Web -- ${userInfo.enName }(${userInfo.chnName })</h2>
 	</header>
 
 	<!-- Button to open/hide menu -->
@@ -113,8 +115,18 @@
 
 	<!-- Side tabs shortcuts -->
 	<ul id="shortcuts" role="complementary" class="children-tooltip tooltip-right">
-		<li><a href="<%=WEBPATH %>/tmw/home" class="shortcut-dashboard" title="Dashboard">Dashboard</a></li>
-		<li class="current"><a href="<%=WEBPATH %>/tmw/user" class="shortcut-contacts" title="Users">Users</a></li>
+		<c:forEach items="${menuList}" var="p">
+			<c:choose>
+				<c:when test="${p.menuName == 'Users'}">
+					<li class="current">
+				</c:when>
+				<c:otherwise>
+					<li>
+				</c:otherwise>
+			</c:choose>
+			<a href="<%=WEBPATH %>${p.menuURL }" class="${p.menucss }" title="${p.menuTitle }">${p.menuName }</a>
+			</li>
+		</c:forEach>
 	</ul>
 
 	<!-- Sidebar/drop-down menu -->
@@ -124,16 +136,15 @@
 		<div id="menu-content">
 
 			<header>
-				Administrator
+				${userInfo.enName }(${userInfo.chnName })
 			</header>
-
+			
 			<div id="profile">
 				<img src="<%=WEBPATH %>/img/user.png" width="64" height="64" alt="User name" class="user-icon">
 				Hello
 				<span class="name"><b>Admin</b></span>
 			</div>
 
-			<!-- By default, this section is made for 4 icons, see the doc to learn how to change this, in "basic markup explained" -->
 			<ul id="access" class="children-tooltip">
 				<li><a href="javascript:void(0);" title="Profile"><span class="icon-user"></span></a></li>
 				<li class="disabled"><span class="icon-gear"></span></li>
@@ -214,12 +225,17 @@
 	<script src="<%=WEBPATH %>/js/developr.scroll.js"></script>
 	<script src="<%=WEBPATH %>/js/developr.tooltip.js"></script>
 	<script src="<%=WEBPATH %>/js/developr.table.js"></script>
-
+	<script src="<%=WEBPATH %>/js/developr.message.js"></script>
+	<script src="<%=WEBPATH %>/js/developr.progress-slider.js"></script>
+	<script src="<%=WEBPATH %>/js/developr.modal.js"></script>
+	<script src="<%=WEBPATH %>/js/developr.tabs.js"></script>
 	<!-- Plugins -->
 	<script src="<%=WEBPATH %>/js/table.js"></script>
 	<script src="<%=WEBPATH %>/js/libs/jquery.tablesorter.min.js"></script>
 	<script src="<%=WEBPATH %>/js/libs/DataTables/jquery.dataTables.min.js"></script>
 	<script type="text/javascript">
+	$.template.init();
+	
 	function init() {
 		initTableNow("myTable", "<%=WEBPATH %>/tmw/userlist", null, 
 				[ "<input type=\"checkbox\" name=\"checkAll\" id=\"checkAll\" />", "<div style='text-align: left;'>User Name</div>", "<div style='text-align: left;'>Join Date</div>", "<div style='text-align: left;'>Status</div>", "<div style='text-align: left;'>Tags</div>", "<div style='text-align: left;'>Actions</div>"],
@@ -292,10 +308,17 @@
 			} 
 		});
 	}); 
-	</script>
-	<script>
-		// Call template init (optional, but faster if called manually)
-		$.template.init();
+	
+	function openUserFrame() {
+		
+		$.modal({
+			title: 'Add User',
+			url: '<%=WEBPATH %>/js/developr.progress-slider.js',
+			useIframe: true,
+			width: 600,
+			height: 400
+		});
+	}
 	</script>
 </body>
 </html>

@@ -1,11 +1,13 @@
 package org.tom.server.core.user.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
+import org.tom.server.basic.util.SessionConstants;
 import org.tom.server.basic.vo.PageJsonBean;
+import org.tom.server.core.menu.domain.MenuInfoVO;
 import org.tom.server.core.user.domain.UserInfoVO;
 import org.tom.server.core.user.service.UserInfoService;
 
@@ -33,8 +37,14 @@ public class UserController extends AbstractController {
 	 * jump to user page
 	 * @return
 	 */
-	@RequestMapping("user")
-	public String userlink() {
+	@RequestMapping("/menu/user")
+	public String userlink(Map<String, Object> model, HttpSession httpSession) {
+		
+		@SuppressWarnings("unchecked")
+		List<MenuInfoVO> list = (ArrayList<MenuInfoVO>)httpSession.getAttribute(SessionConstants.MENU_SESSION_ID);
+		UserInfoVO userInfo = (UserInfoVO)httpSession.getAttribute(SessionConstants.LOGIN_SESSION_ID);
+		model.put("menuList", list);
+		model.put("userInfo", userInfo);
 		
 		return "user";
 	}
@@ -60,6 +70,12 @@ public class UserController extends AbstractController {
 		model.put("list", list); 
 		
 		return model;
+	}
+	
+	@RequestMapping(value = "/userinfo", method = RequestMethod.POST)
+	public String userinfo(Map<String, Object> model) {
+		
+		return null;
 	}
 
 	@Override
