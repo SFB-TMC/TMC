@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <!--     common -->
-	<color name="title_background">#004d79</color>
+	<color name="title_background">#004e78</color>
     <color name="transparent">#00000000</color>
     <color name="white">#ffffff</color>
     <color name="red">#FF0000</color>
