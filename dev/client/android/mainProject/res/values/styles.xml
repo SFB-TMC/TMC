@@ -118,9 +118,10 @@
 		<item name="android:layout_width">240dp</item>
 		<item name="android:layout_height">wrap_content</item>
 		<item name="android:orientation">vertical</item>
-		<item name="android:background">@drawable/bg_shadow</item>
-		<item name="android:padding">5dp</item>
-		<item name="android:layout_marginTop">-5dp</item>
+		<item name="android:background">@color/title_background</item>
+<!-- 		<item name="android:background">@drawable/bg_shadow</item> -->
+		<item name="android:paddingLeft">5dp</item>
+<!-- 		<item name="android:layout_marginTop">-5dp</item> -->
 	</style>
 	<style name="menu_h_line">
 		<item name="android:layout_width">match_parent</item>
