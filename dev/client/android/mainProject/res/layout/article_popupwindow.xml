@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/menu_layout">
+
+	<LinearLayout style="@style/menu_row" android:id="@+id/article_pop_menu_ilike">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="I Like(点赞)" />
+	</LinearLayout>
+
+	<View style="@style/menu_h_line" />
+	
+	<LinearLayout style="@style/menu_row" android:id="@+id/article_pop_menu_share">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Share" />
+	</LinearLayout>
+
+	<View style="@style/menu_h_line" />
+
+	<LinearLayout style="@style/menu_row" android:id="@+id/article_pop_menu_copylink">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Copy Link" />
+	</LinearLayout>
+
+	<View style="@style/menu_h_line" />
+
+	<LinearLayout style="@style/menu_row" android:id="@+id/article_pop_menu_menu_1">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Menu one" />
+	</LinearLayout>
+
+	<View style="@style/menu_h_line" />
+
+	<LinearLayout style="@style/menu_row" android:id="@+id/article_pop_menu_menu_2">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Menu two" />
+	</LinearLayout>
+
+	<View style="@style/menu_h_line" />
+
+	<LinearLayout style="@style/menu_row" android:id="@+id/article_pop_menu_menu_3">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Menu Three" />
+	</LinearLayout>
+
+	<View style="@style/menu_h_line" />
+
+	<LinearLayout style="@style/menu_row" android:id="@+id/article_pop_menu_exit">
+		<ImageView style="@style/menu_row_icon" />
+		<TextView style="@style/menu_row_textview"
+			android:text="Exit" />
+	</LinearLayout>
+
+</LinearLayout>
