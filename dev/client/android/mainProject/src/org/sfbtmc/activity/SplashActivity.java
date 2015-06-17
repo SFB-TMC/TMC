@@ -4,7 +4,10 @@ import org.json.JSONObject;
 import org.sfbtmc.R;
 import org.sfbtmc.net.TmcClient;
 import org.sfbtmc.net.TmcJsonHttpResponseHandler;
+import org.sfbtmc.net.TmcServerConfig;
 import org.sfbtmc.util.TmcLogUtils;
+
+import com.loopj.android.http.RequestParams;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -52,11 +55,15 @@ public class SplashActivity extends FragmentActivity implements
 
 		handler = new Handler();
 
+		RequestParams params = new RequestParams();
+		params.put("clientVerCode", getVersionCode());
+		
+		
 		TmcClient tmcClient = TmcClient.getInstance();
 		tmcClient
 				.tmcPost(
-						"https://raw.githubusercontent.com/SFB-TMC/TMC/master/dev/client/android/check_update.json",
-						null, new TmcJsonHttpResponseHandler() {
+						TmcServerConfig.NEW_VER_CHECK,
+						params, new TmcJsonHttpResponseHandler() {
 							/**
 							 * 这个是网络发生了错误,没请求到数据的错误
 							 * 
@@ -109,15 +116,20 @@ public class SplashActivity extends FragmentActivity implements
 		toLoginActivity();
 	}
 	private void showNewVersionDialog(final JSONObject response){
+		final int forceUpdate = response.optInt("forceUpdate");
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle("Update!")
 		.setMessage(response.optString("curVersionDesc"))
 		.setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
-			@Override
-			public void onClick(DialogInterface arg0, int arg1) {
-				toLoginActivity();
-			}
-		})
+				@Override
+				public void onClick(DialogInterface arg0, int arg1) {
+					if(1 == forceUpdate){
+						cancelForceUpdate();
+					}else{
+						toLoginActivity();
+					}
+				}
+			})
 		.setPositiveButton("Update", new  DialogInterface.OnClickListener(){
 			@Override
 			public void onClick(DialogInterface arg0, int arg1) {
@@ -125,7 +137,12 @@ public class SplashActivity extends FragmentActivity implements
 			}
 		})
 		.setCancelable(false);
+		
 		builder.create().show();
+	}
+	
+	private void cancelForceUpdate(){
+		this.finish();
 	}
 	
 	private void toNewVerDownloadActivity(String downloadUrl){
