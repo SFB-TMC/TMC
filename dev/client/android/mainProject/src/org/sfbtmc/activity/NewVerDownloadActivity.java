@@ -56,6 +56,8 @@ public class NewVerDownloadActivity extends Activity implements OnClickListener 
 		intent.setDataAndType(Uri.fromFile(file),
 				"application/vnd.android.package-archive");
 		startActivity(intent);
+		
+		this.finish();
 	}
 	
 	private void updateProgressBar(long bytesWritten, long totalSize){

@@ -96,10 +96,10 @@ public class SplashActivity extends FragmentActivity implements
 										.d(" request new Version onTmcSuccess");
 								int serverVersionCode = response.optInt(
 										"curVersionCode", 0);
-//								if (serverVersionCode <= getVersionCode()) {
-//									toLoginActivity();
-//									return;
-//								}
+								if (serverVersionCode <= getVersionCode()) {
+									toLoginActivity();
+									return;
+								}
 								showNewVersionDialog(response);
 							}
 						});
@@ -123,7 +123,8 @@ public class SplashActivity extends FragmentActivity implements
 			public void onClick(DialogInterface arg0, int arg1) {
 				toNewVerDownloadActivity(response.optString("downUrl"));
 			}
-		});
+		})
+		.setCancelable(false);
 		builder.create().show();
 	}
 	
