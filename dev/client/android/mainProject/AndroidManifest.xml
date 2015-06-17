@@ -43,7 +43,10 @@
             android:name="org.sfbtmc.activity.LoginActivity"
             android:label="@string/app_name" >
         </activity>
-        
+         <activity
+            android:name="org.sfbtmc.activity.NewVerDownloadActivity"
+            android:label="@string/app_name" >
+        </activity>
         
         <activity
             android:name="org.sfbtmc.activity.MainActivity"

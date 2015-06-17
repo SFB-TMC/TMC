@@ -108,7 +108,7 @@ public class SplashActivity extends FragmentActivity implements
 	private void newVersionCheckFailed(){
 		toLoginActivity();
 	}
-	private void showNewVersionDialog(JSONObject response){
+	private void showNewVersionDialog(final JSONObject response){
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle("Update!")
 		.setMessage(response.optString("curVersionDesc"))
@@ -121,13 +121,14 @@ public class SplashActivity extends FragmentActivity implements
 		.setPositiveButton("Update", new  DialogInterface.OnClickListener(){
 			@Override
 			public void onClick(DialogInterface arg0, int arg1) {
-				toLoginActivity();
+				toNewVerDownloadActivity(response.optString("downUrl"));
 			}
 		});
 		builder.create().show();
-		
-		
-		
+	}
+	
+	private void toNewVerDownloadActivity(String downloadUrl){
+		NewVerDownloadActivity.startDownload(this, downloadUrl);
 	}
 	
 	private String getVersionName() throws Exception {
