@@ -25,6 +25,8 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
+import com.umeng.message.PushAgent;
+
 public class SplashActivity extends FragmentActivity implements
 		AnimationListener, OnClickListener {
 	private ImageView imgLogo;
@@ -36,6 +38,10 @@ public class SplashActivity extends FragmentActivity implements
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_splash);
+		
+		PushAgent mPushAgent = PushAgent.getInstance(this);
+		mPushAgent.enable();
+		PushAgent.getInstance(this).onAppStart();
 
 		imgLogo = (ImageView) findViewById(R.id.activity_splash_logo_img);
 

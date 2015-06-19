@@ -5,6 +5,7 @@
 
 # Package Files #
 bin
+gen
 #*.jar
 *.war
 *.ear

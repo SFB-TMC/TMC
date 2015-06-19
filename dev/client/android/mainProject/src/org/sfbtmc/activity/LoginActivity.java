@@ -17,6 +17,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.loopj.android.http.RequestParams;
+import com.umeng.message.PushAgent;
+import com.umeng.message.UmengRegistrar;
 
 public class LoginActivity extends Activity implements OnClickListener{
 	private EditText etName;
@@ -24,7 +26,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		PushAgent.getInstance(this).onAppStart();
 		setContentView(R.layout.activity_login);
 		
 		etName = (EditText) findViewById(R.id.activity_login_username_et);
@@ -33,6 +35,10 @@ public class LoginActivity extends Activity implements OnClickListener{
 	}
 
 	private void login(){
+		
+		String device_token = UmengRegistrar.getRegistrationId(this);
+		TmcLogUtils.e(device_token);
+		
 		TmcClient client = TmcClient.getInstance();
 		RequestParams param = new RequestParams();
 		
@@ -88,8 +94,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 	public void onClick(View arg0) {
 		int i = arg0.getId();
 		if(R.id.activity_login_btn_login == i){
-//			login();
-			toMainActivity();
+			login();
 		}
 	}
 }

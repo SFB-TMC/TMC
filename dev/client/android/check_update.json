@@ -1,0 +1,10 @@
+{
+	"status": 0,
+	"data": {
+		"curVersionName": "v0.1",
+		"curVersionCode": 1,
+		"forceUpdate":1,
+		"downUrl": "https://raw.githubusercontent.com/SFB-TMC/TMC/master/dev/client/android/download/SFB_TMC_v0.1.apk",
+		"curVersionDesc": "1.add login, \\n 2.add push"
+	}
+}
