@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="600dp"
+    android:background="@drawable/bg_shadow" >
+
+    <LinearLayout
+        style="@style/common_layout_mm"
+        android:background="#dfdfdf"
+        android:orientation="vertical" >
+
+        <TextView
+            style="@style/activity_joined_people"
+            android:text="Mankel" />
+
+        <View style="@style/menu_h_line" />
+
+        <TextView
+            style="@style/activity_joined_people"
+            android:text="Laila" />
+
+        <View style="@style/menu_h_line" />
+
+        <TextView
+            style="@style/activity_joined_people"
+            android:text="Amy" />
+
+        <View style="@style/menu_h_line" />
+
+        <TextView
+            style="@style/activity_joined_people"
+            android:text="Michelle" />
+
+        <View style="@style/menu_h_line" />
+
+        <TextView
+            style="@style/activity_joined_people"
+            android:text="Mankel" />
+
+        <View style="@style/menu_h_line" />
+
+        <TextView
+            style="@style/activity_joined_people"
+            android:text="Laila" />
+
+        <View style="@style/menu_h_line" />
+
+        <TextView
+            style="@style/activity_joined_people"
+            android:text="Amy" />
+
+        <View style="@style/menu_h_line" />
+
+        <TextView
+            style="@style/activity_joined_people"
+            android:text="Michelle" />
+
+        <View style="@style/menu_h_line" />
+
+        <TextView
+            style="@style/activity_joined_people"
+            android:text="Amy" />
+
+        <View style="@style/menu_h_line" />
+
+        <TextView
+            style="@style/activity_joined_people"
+            android:text="Michelle" />
+    </LinearLayout>
+
+</ScrollView>

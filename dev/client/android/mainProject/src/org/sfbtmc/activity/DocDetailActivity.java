@@ -1,6 +1,7 @@
 package org.sfbtmc.activity;
 
 import org.sfbtmc.R;
+import org.sfbtmc.widget.ArticleMenuPopWindow;
 import org.sfbtmc.widget.MainPageMenuPopWindow;
 
 import android.app.Activity;
@@ -71,7 +72,7 @@ public class DocDetailActivity extends Activity {
 				super.onBackPressed();
 				break;
 			case R.id.layout_title_menu_img:
-				MainPageMenuPopWindow morePopWindow = new MainPageMenuPopWindow(this);
+				ArticleMenuPopWindow morePopWindow = new ArticleMenuPopWindow(this);
 				morePopWindow.showPopupWindow(view);
 				break;
 		}

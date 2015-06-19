@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/common_layout_mm"
+    android:background="#ebebeb"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/layout_agenda_title"
+        layout="@layout/layout_agenda_detail_title" />
+
+    <TextView
+        style="@style/meeting_agenda_page_top_text"
+        android:text="Venue: 10th Floor Kejiyuan Building Keji Road No.4\nTime: 2015-06-06 18:50" />
+
+    <TextView
+        style="@style/meeting_agenda_page_top_datetime"
+        android:text="2015-06-09 19:00:00" />
+    
+    <View style="@style/common_line_h_d1d1d1" />
+
+    <ScrollView style="@style/common_layout_scroll_view" >
+
+        <LinearLayout android:id="@+id/meeting_agenda_page_item_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row_break" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row" />
+
+            <include layout="@layout/activity_agenda_detail_row_break" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="0.5dp"
+    android:background="#f8f8f8"
+    android:shrinkColumns="2"
+    android:stretchColumns="2" >
+
+    <TableRow>
+
+        <TextView
+            style="@style/meeting_agenda_page_ctn_text"
+            android:layout_width="38dp"
+            android:gravity="center"
+            android:text="18:45" />
+
+        <View style="@style/meeting_agenda_page_ctn_td_div" />
+
+        <TextView
+            style="@style/meeting_agenda_page_ctn_text"
+            android:paddingLeft="5dp"
+            android:text="Break" />
+
+        <View style="@style/meeting_agenda_page_ctn_td_div" />
+
+        <TextView
+            style="@style/meeting_agenda_page_ctn_text"
+            android:layout_width="30dp"
+            android:gravity="center"
+            android:text="5" />
+
+        <View style="@style/meeting_agenda_page_ctn_td_div" />
+
+        <TextView
+            style="@style/meeting_agenda_page_ctn_text"
+            android:layout_width="73dp"
+            android:paddingLeft="5dp"
+            android:text="" />
+    </TableRow>
+
+</TableLayout>

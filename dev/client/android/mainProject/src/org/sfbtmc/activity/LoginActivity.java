@@ -88,7 +88,8 @@ public class LoginActivity extends Activity implements OnClickListener{
 	public void onClick(View arg0) {
 		int i = arg0.getId();
 		if(R.id.activity_login_btn_login == i){
-			login();
+//			login();
+			toMainActivity();
 		}
 	}
 }

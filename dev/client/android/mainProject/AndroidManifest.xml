@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.sfbtmc"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="0.1" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="14"
         android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -43,46 +43,42 @@
             android:name="org.sfbtmc.activity.LoginActivity"
             android:label="@string/app_name" >
         </activity>
-        
+         <activity
+            android:name="org.sfbtmc.activity.NewVerDownloadActivity"
+            android:label="@string/app_name" >
+        </activity>
         
         <activity
             android:name="org.sfbtmc.activity.MainActivity"
             android:label="@string/app_name" >
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
+        
+        
         <activity
             android:name=".activity.AgendaActivity"
             android:label="@string/title_activity_agenda" >
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
+        
+        
         <activity
             android:name="org.sfbtmc.activity.DocDetailActivity"
             android:label="@string/title_activity_doc_detail" >
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         
+        <!-- Notification Page -->
         <activity
             android:name="org.sfbtmc.activity.NotificationActivity"
             android:label="@string/title_activity_notification">
-            <!-- adsfasdf -->
+        </activity>
+        
+        <!-- Agenda Detail Page -->
+        <activity
+            android:name="org.sfbtmc.activity.AgendaDetailActivity">
+        </activity>
+        
+        <!-- Activity Page -->
+        <activity
+            android:name="org.sfbtmc.activity.ActivityActivity">
         </activity>
         
     </application>

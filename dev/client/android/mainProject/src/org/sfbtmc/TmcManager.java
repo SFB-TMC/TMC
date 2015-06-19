@@ -24,5 +24,8 @@ public class TmcManager {
 	public UserBean getUserBean(){
 		return userBean; 
 	}
+	public boolean isUserLogged(){
+		return null != userBean;
+	}
 	
 }

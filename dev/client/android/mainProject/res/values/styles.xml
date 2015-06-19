@@ -83,6 +83,12 @@
 		<item name="android:padding">5dp</item>
 		<item name="android:lineSpacingMultiplier">1.2</item>
 	</style>
+	<style name="test_style" parent="@style/common_layout_mw">
+		<item name="android:textSize">15sp</item>
+		<item name="android:textColor">#ff0000</item>
+		<item name="android:padding">5dp</item>
+		<item name="android:lineSpacingMultiplier">1.2</item>
+	</style>
 
 <!-- title bar -->
 	<style name="title_bar_layout">
@@ -118,9 +124,10 @@
 		<item name="android:layout_width">240dp</item>
 		<item name="android:layout_height">wrap_content</item>
 		<item name="android:orientation">vertical</item>
-		<item name="android:background">@drawable/bg_shadow</item>
-		<item name="android:padding">5dp</item>
-		<item name="android:layout_marginTop">-5dp</item>
+		<item name="android:background">@color/title_background</item>
+<!-- 		<item name="android:background">@drawable/bg_shadow</item> -->
+		<item name="android:paddingLeft">5dp</item>
+<!-- 		<item name="android:layout_marginTop">-5dp</item> -->
 	</style>
 	<style name="menu_h_line">
 		<item name="android:layout_width">match_parent</item>
@@ -132,7 +139,7 @@
 		<item name="android:layout_height">47dp</item>
 		<item name="android:clickable">true</item>
 		<item name="android:orientation">horizontal</item>
-		<item name="android:background">#004e78</item>
+		<item name="android:background">@drawable/selector_main_menu</item>
 	</style>
 	<style name="menu_row_icon">
 		<item name="android:layout_width">47dp</item>
@@ -210,7 +217,7 @@
 		<item name="android:paddingRight">5dp</item>
 	</style>
 
-<!-- notification page -->
+<!-- meeting page -->
 	<style name="meeting_page_layout" parent="@style/common_layout_mm">
 		<item name="android:orientation">vertical</item>
 	</style>
@@ -257,6 +264,103 @@
 		<item name="android:textColor">#004e78</item>
 		<item name="android:gravity">center_vertical</item>
 	</style>
+
+<!-- meeting agenda page -->
+	<style name="meeting_agenda_page_top_text">
+	    <item name="android:layout_width">match_parent</item>
+	    <item name="android:layout_height">40dp</item>
+	    <item name="android:background">#ffffff</item>
+	    <item name="android:textSize">12sp</item>
+		<item name="android:textColor">#000000</item>
+		<item name="android:paddingLeft">5dp</item>
+		<item name="android:paddingTop">5dp</item>
+		<item name="android:paddingRight">5dp</item>
+		<item name="android:lineSpacingMultiplier">1.2</item>
+	</style>
+	<style name="meeting_agenda_page_top_datetime" parent="@style/common_layout_mw">
+	    <item name="android:background">#ffffff</item>
+	    <item name="android:textSize">8sp</item>
+		<item name="android:textColor">#bbbbbb</item>
+		<item name="android:gravity">center_vertical|right</item>
+		<item name="android:paddingRight">5dp</item>
+		<item name="android:paddingBottom">2dp</item>
+	</style>
+	<style name="meeting_agenda_page_ctn_td_div">
+	    <item name="android:layout_width">0.5dp</item>
+	    <item name="android:layout_height">match_parent</item>
+	    <item name="android:layout_marginTop">5dp</item>
+	    <item name="android:layout_marginBottom">5dp</item>
+	    <item name="android:background">#ebebeb</item>
+	</style>
+	<style name="meeting_agenda_page_ctn_text">
+	    <item name="android:textSize">10sp</item>
+		<item name="android:textColor">#000000</item>
+		<item name="android:layout_height">35dp</item>
+		<item name="android:gravity">center_vertical</item>
+<!-- 		<item name="android:background">#ffffff</item> -->
+		<item name="android:layout_marginBottom">0.5dp</item>
+	</style>
+	<style name="meeting_agenda_page_ctn_text_break">
+	    <item name="android:textSize">10sp</item>
+		<item name="android:textColor">#000000</item>
+		<item name="android:layout_height">28dp</item>
+		<item name="android:gravity">center_vertical</item>
+<!-- 		<item name="android:background">#f8f8f8</item> -->
+		<item name="android:layout_marginBottom">0.5dp</item>
+	</style>
+	<style name="meeting_agenda_page_confirm_button">
+	    <item name="android:layout_width">70dp</item>
+	    <item name="android:layout_height">40dp</item>
+	    <item name="android:textSize">12sp</item>
+	    <item name="android:textStyle">bold</item>
+	</style>
 	
+<!-- Activity page -->
+	<style name="activity_bottom_btn_text">
+	    <item name="android:layout_width">43dp</item>
+	    <item name="android:layout_height">30dp</item>
+	    <item name="android:textSize">12sp</item>
+	    <item name="android:textColor">#ffffff</item>
+	    <item name="android:textStyle">bold</item>
+	</style>
+	<style name="activity_chat_who" parent="@style/common_layout_ww">
+	    <item name="android:layout_marginBottom">2dp</item>
+	    <item name="android:textColor">#5a5a5a</item>
+	    <item name="android:textSize">14sp</item>
+	</style>
+	<style name="activity_chat_msg" parent="@style/common_layout_ww">
+	    <item name="android:layout_marginBottom">12dp</item>
+	    <item name="android:background">#ffffff</item>
+	    <item name="android:maxWidth">250dp</item>
+	    <item name="android:padding">10dp</item>
+	    <item name="android:textColor">#000000</item>
+	    <item name="android:textSize">14sp</item>
+	</style>
+	<style name="activity_chat_who_self" parent="@style/common_layout_ww">
+	    <item name="android:layout_marginBottom">2dp</item>
+	    <item name="android:textColor">#004b75</item>
+	    <item name="android:textSize">14sp</item>
+	    <item name="android:layout_gravity">right</item>
+	    <item name="android:textStyle">bold</item>
+	</style>
+	<style name="activity_chat_msg_self" parent="@style/common_layout_ww">
+	    <item name="android:layout_marginBottom">12dp</item>
+	    <item name="android:background">#004b75</item>
+	    <item name="android:maxWidth">250dp</item>
+	    <item name="android:padding">10dp</item>
+	    <item name="android:textColor">#ffffff</item>
+	    <item name="android:textSize">14sp</item>
+	    <item name="android:layout_gravity">right</item>
+	</style>
+	<style name="activity_joined_people">
+	    <item name="android:layout_width">match_parent</item>
+	    <item name="android:layout_height">32dp</item>
+	    <item name="android:gravity">center_vertical</item>
+	    <item name="android:textColor">#ffffff</item>
+	    <item name="android:textSize">14sp</item>
+	    <item name="android:paddingLeft">10dp</item>
+	    <item name="android:background">@drawable/selector_main_menu</item>
+	    <item name="android:clickable">true</item>
+	</style>
 	
 </resources>

@@ -34,10 +34,10 @@
 
 	<View style="@style/menu_h_line" />
 
-	<LinearLayout style="@style/menu_row" android:id="@+id/mainpage_pop_menu_2">
+	<LinearLayout style="@style/menu_row" android:id="@+id/mainpage_pop_menu_activity">
 		<ImageView style="@style/menu_row_icon" />
 		<TextView style="@style/menu_row_textview"
-			android:text="Menu two" />
+			android:text="Activity" />
 	</LinearLayout>
 
 	<View style="@style/menu_h_line" />

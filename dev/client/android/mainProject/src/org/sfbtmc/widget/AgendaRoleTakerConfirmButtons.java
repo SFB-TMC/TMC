@@ -4,6 +4,7 @@ import org.sfbtmc.R;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,21 +12,22 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.PopupWindow;
 
-public class MainPageMenuPopWindow extends PopupWindow implements OnClickListener {
-	private View conentView;
-	private OnPopMenuClickListener onMenuClickListener;
+public class AgendaRoleTakerConfirmButtons extends PopupWindow implements OnClickListener {
 
-	public MainPageMenuPopWindow(final Activity context) {
+	private View conentView;
+	private View row;
+
+	public AgendaRoleTakerConfirmButtons(final Activity context, View row) {
+		this.row = row;
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		conentView = inflater.inflate(R.layout.mainpage_popupwindow, null);
-		int h = context.getWindowManager().getDefaultDisplay().getHeight();
-		int w = context.getWindowManager().getDefaultDisplay().getWidth();
+		conentView = inflater.inflate(R.layout.layout_agenda_confirm_buttons, null);
 		// 设置SelectPicPopupWindow的View
 		this.setContentView(conentView);
 		// 设置SelectPicPopupWindow弹出窗体的宽
-		this.setWidth(w / 2 + 50);
+		this.setWidth(LayoutParams.WRAP_CONTENT);
 		// 设置SelectPicPopupWindow弹出窗体的高
 		this.setHeight(LayoutParams.WRAP_CONTENT);
+
 		// 设置SelectPicPopupWindow弹出窗体可点击
 		this.setFocusable(true);
 		this.setOutsideTouchable(true);
@@ -35,25 +37,19 @@ public class MainPageMenuPopWindow extends PopupWindow implements OnClickListene
 		ColorDrawable dw = new ColorDrawable(0000000000);
 		// 点back键和其他地方使其消失,设置了这个才能触发OnDismisslistener ，设置其他控件变化等操作
 		this.setBackgroundDrawable(dw);
-		// mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
 		// 设置SelectPicPopupWindow弹出窗体动画效果
 		this.setAnimationStyle(R.style.AnimationPreview);
 
 		int[] idArray = {
-			R.id.mainpage_pop_menu_notification,
-			R.id.mainpage_pop_menu_special_column,
-			R.id.mainpage_pop_menu_agenda,
-			R.id.mainpage_pop_menu_doc,
-			R.id.mainpage_pop_menu_activity,
-			R.id.mainpage_pop_menu_3,
-			R.id.mainpage_pop_menu_exit
+			R.id.agenda_role_confirm_accept,
+			R.id.agenda_role_confirm_decline
 		};
 		for (int id : idArray) {
-			conentView.findViewById(id).setOnClickListener(this);
+			this.conentView.findViewById(id).setOnClickListener(this);
 		}
 	}
 
-	public void showPopupWindow(View parent) {
+	public void showConfirmButtons(View parent) {
 		if (!this.isShowing()) {
 			this.showAsDropDown(parent);
 		} else {
@@ -61,25 +57,15 @@ public class MainPageMenuPopWindow extends PopupWindow implements OnClickListene
 		}
 	}
 
-	public OnPopMenuClickListener getOnMenuClickListener() {
-		return onMenuClickListener;
-	}
-
-	public void setOnMenuClickListener(OnPopMenuClickListener onMenuClickListener) {
-		this.onMenuClickListener = onMenuClickListener;
-	}
-
-	public interface OnPopMenuClickListener {
-		public void onClickMenu(View clickedMenu);
-
-	}
-
 	@Override
-	public void onClick(View arg0) {
-		if (null == onMenuClickListener) {
-			return;
+	public void onClick(View v) {
+		int id = v.getId();
+		if (id == R.id.agenda_role_confirm_accept) {
+			this.row.setBackgroundColor(Color.parseColor("#dfffc2"));
+		} else if (id == R.id.agenda_role_confirm_decline) {
+			this.row.setBackgroundColor(Color.parseColor("#ffd8cf"));
 		}
-
-		onMenuClickListener.onClickMenu(arg0);
+		this.dismiss();
 	}
+
 }

@@ -1,0 +1,151 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/common_layout_mm"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <LinearLayout
+        android:id="@+id/layout_activity_top"
+        style="@style/common_layout_mw"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <include layout="@layout/layout_activity_title" />
+
+        <TextView
+            style="@style/common_layout_mw"
+            android:gravity="center_vertical|right"
+            android:paddingRight="10dp"
+            android:paddingTop="2dp"
+            android:text="2015-06-06 18:08:08"
+            android:textColor="#bbbbbb"
+            android:textSize="12sp" />
+
+        <TextView
+            style="@style/common_layout_mw"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="1.2"
+            android:maxLines="2"
+            android:paddingLeft="10dp"
+            android:paddingBottom="4dp"
+            android:text="Meeting At: Futian Swimming Pool\nTime: 2015-06-13 15:00"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <View style="@style/common_line_h_d1d1d1" />
+
+        <RelativeLayout
+            android:id="@+id/activity_joined_btn"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/selector_activity_joined" >
+
+            <TextView
+                style="@style/common_layout_mm"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="12 Joined:  Mankel, Laila, Amy, Michelle ... "
+                android:textColor="#004e78"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/icon_list_down" />
+        </RelativeLayout>
+
+        <View style="@style/common_line_h_d1d1d1" />
+    </LinearLayout>
+
+    <ScrollView android:id="@+id/avtivity_chat_scroll_view"
+        style="@style/common_layout_scroll_view"
+        android:layout_above="@+id/layout_activity_bottom"
+        android:layout_below="@+id/layout_activity_top" >
+
+        <LinearLayout
+            android:id="@+id/activity_chat_container"
+            style="@style/common_list_in_scroll_view"
+            android:padding="10dp" >
+
+            <TextView
+                style="@style/activity_chat_who"
+                android:text="Amy" />
+
+            <TextView
+                style="@style/activity_chat_msg"
+                android:text="I am very happy to join this activity, too. I am very excited to see you guys. I am so proud of you all. See U then ^^" />
+
+            <TextView
+                style="@style/activity_chat_who"
+                android:text="Denise" />
+
+            <TextView
+                style="@style/activity_chat_msg"
+                android:text="I am very happy to join this activity, too. I am very excited to see you guys. I am so proud of you all. See U then ^^" />
+
+            <TextView
+                style="@style/activity_chat_who_self"
+                android:text="Mankel" />
+
+            <TextView
+                style="@style/activity_chat_msg_self"
+                android:text="I am very happy to join this activity, too. I am very excited to see you guys. I am so proud of you all. See U then ^^" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layout_activity_bottom"
+        style="@style/common_layout_mw"
+        android:layout_alignParentBottom="true"
+        android:background="#f6f6f6"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="8dp" >
+
+        <View style="@style/common_line_h_d1d1d1" />
+
+        <TableLayout
+            style="@style/common_layout_mw"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="8dp"
+            android:shrinkColumns="1"
+            android:stretchColumns="1" >
+
+            <TableRow>
+
+                <Button
+                    style="@style/activity_bottom_btn_text"
+                    android:background="#00c400"
+                    android:text="JOIN" />
+
+                <EditText
+                    android:id="@+id/activity_chat_edit_text"
+                    style="@style/common_layout_mm"
+                    android:background="#f6f6f6"
+                    android:inputType="textMultiLine"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/activity_chat_button_send"
+                    style="@style/activity_bottom_btn_text"
+                    android:background="#004b75"
+                    android:text="SEND" />
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="55dp"
+            android:background="#004e78" />
+    </LinearLayout>
+
+</RelativeLayout>

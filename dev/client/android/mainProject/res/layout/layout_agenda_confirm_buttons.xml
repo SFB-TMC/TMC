@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/common_layout_ww"
+    android:background="@drawable/bg_shadow"
+    android:orientation="horizontal"
+    android:padding="4dp" >
+
+    <Button
+        android:id="@+id/agenda_role_confirm_accept"
+        style="@style/meeting_agenda_page_confirm_button"
+        android:background="@drawable/selector_button_role_confirm_accept"
+        android:text="Accept" />
+
+    <Button
+        android:id="@+id/agenda_role_confirm_decline"
+        style="@style/meeting_agenda_page_confirm_button"
+        android:background="@drawable/selector_button_role_confirm_decline"
+        android:text="Decline" />
+
+</LinearLayout>
