@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EBEBEB"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_special_column_title" />
+
+    <ScrollView style="@style/common_layout_scroll_view" >
+
+        <LinearLayout style="@style/common_list_in_scroll_view" >
+
+            <RelativeLayout style="@style/special_column_item_layout" >
+
+                <ImageView
+                    style="@style/special_column_item_image_view"
+                    android:src="@drawable/sc_1" />
+
+                <TextView
+                    style="@style/special_column_item_text_view"
+                    android:text="You never kown what would happen next, try to cherish every second you have now." />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/special_column_item_layout" >
+
+                <ImageView
+                    style="@style/special_column_item_image_view"
+                    android:src="@drawable/sc_2" />
+
+                <TextView
+                    style="@style/special_column_item_text_view"
+                    android:text="Linva is a special lady, she&apos;s got a special talent. We call it - Linva Says ^^" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/special_column_item_layout" >
+
+                <ImageView
+                    style="@style/special_column_item_image_view"
+                    android:src="@drawable/sc_3" />
+
+                <TextView
+                    style="@style/special_column_item_text_view"
+                    android:text="“I love you” is never enough to love you. You mean everything to me. Always have. Alw..." />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/special_column_item_layout" >
+
+                <ImageView
+                    style="@style/special_column_item_image_view"
+                    android:src="@drawable/sc_1" />
+
+                <TextView
+                    style="@style/special_column_item_text_view"
+                    android:text="You never kown what would happen next, try to cherish every second you have now." />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/special_column_item_layout" >
+
+                <ImageView
+                    style="@style/special_column_item_image_view"
+                    android:src="@drawable/sc_2" />
+
+                <TextView
+                    style="@style/special_column_item_text_view"
+                    android:text="Linva is a special lady, she&apos;s got a special talent. We call it - Linva Says ^^" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/special_column_item_layout" >
+
+                <ImageView
+                    style="@style/special_column_item_image_view"
+                    android:src="@drawable/sc_3" />
+
+                <TextView
+                    style="@style/special_column_item_text_view"
+                    android:text="“I love you” is never enough to love you. You mean everything to me. Always have. Alw..." />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

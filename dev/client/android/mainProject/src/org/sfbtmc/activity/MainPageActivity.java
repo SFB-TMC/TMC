@@ -18,10 +18,10 @@ public class MainPageActivity extends FragmentActivity implements OnClickListene
 	private final static SparseArray<Class<?>> MENU_ID = new SparseArray<Class<?>>(0);
 	static {
 		MENU_ID.put(R.id.mainpage_pop_menu_notification, NotificationActivity.class);
-		// MENU_ID.put(R.id.mainpage_pop_menu_special_column, null);
+		MENU_ID.put(R.id.mainpage_pop_menu_special_column, SpecialColumnActivity.class);
 		MENU_ID.put(R.id.mainpage_pop_menu_agenda, AgendaActivity.class);
 		MENU_ID.put(R.id.mainpage_pop_menu_doc, DocDetailActivity.class);
-		 MENU_ID.put(R.id.mainpage_pop_menu_activity, ActivityActivity.class);
+		MENU_ID.put(R.id.mainpage_pop_menu_activity, ActivityActivity.class);
 		// MENU_ID.put(R.id.mainpage_pop_menu_3, .class);
 		// MENU_ID.put(R.id.mainpage_pop_menu_exit, null);
 	}

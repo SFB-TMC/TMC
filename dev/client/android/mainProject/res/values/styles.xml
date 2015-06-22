@@ -386,4 +386,27 @@
 	    <item name="android:clickable">true</item>
 	</style>
 	
+<!-- Activity page -->
+	<style name="special_column_item_layout" parent="@style/common_layout_mw">
+	    <item name="android:background">@drawable/bg_shadow</item>
+	</style>
+	<style name="special_column_item_image_view">
+	    <item name="android:layout_width">338dp</item>
+	    <item name="android:layout_height">168dp</item>
+	    <item name="android:layout_centerInParent">true</item>
+	    <item name="android:scaleType">fitXY</item>
+	</style>
+	<style name="special_column_item_text_view">
+	    <item name="android:layout_width">match_parent</item>
+	    <item name="android:layout_height">44dp</item>
+	    <item name="android:layout_alignParentBottom">true</item>
+	    <item name="android:background">#44000000</item>
+	    <item name="android:textColor">#ffffff</item>
+	    <item name="android:textSize">15sp</item>
+	    <item name="android:textStyle">italic</item>
+	    <item name="android:gravity">center_vertical</item>
+	    <item name="android:paddingLeft">8dp</item>
+	    <item name="android:paddingRight">8dp</item>
+	</style>
+	
 </resources>

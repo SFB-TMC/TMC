@@ -7,6 +7,7 @@
     <string name="title_activity_agenda">Meeting</string>
     <string name="title_activity_doc_detail">Detail Document</string>
     <string name="title_activity_notification">Notification</string>
+    <string name="title_activity_special_column">Special Column</string>
     
     <string name="login_page_username">Username</string>
     <string name="login_page_password">Password</string>
