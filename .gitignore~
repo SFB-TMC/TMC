@@ -4,7 +4,6 @@
 .mtj.tmp/
 
 # Package Files #
-project.properties
 bin
 gen
 #*.jar
