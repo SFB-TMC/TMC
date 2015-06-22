@@ -37,7 +37,7 @@ public class MainPageMenuPopWindow extends PopupWindow implements OnClickListene
 		this.setBackgroundDrawable(dw);
 		// mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
 		// 设置SelectPicPopupWindow弹出窗体动画效果
-		this.setAnimationStyle(R.style.AnimationPreview);
+//		this.setAnimationStyle(R.style.AnimationPreview);
 
 		int[] idArray = {
 			R.id.mainpage_pop_menu_notification,

@@ -38,7 +38,7 @@ public class ArticleMenuPopWindow extends PopupWindow implements OnClickListener
 		this.setBackgroundDrawable(dw);
 		// mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
 		// 设置SelectPicPopupWindow弹出窗体动画效果
-		this.setAnimationStyle(R.style.AnimationPreview);
+//		this.setAnimationStyle(R.style.AnimationPreview);
 
 		int[] idArray = {
 				R.id.article_pop_menu_ilike,
