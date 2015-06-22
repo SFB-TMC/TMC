@@ -4,38 +4,78 @@ import java.io.Serializable;
 
 import org.json.JSONObject;
 
+import com.google.gson.annotations.SerializedName;
+
+/**
+ * {"data":{"id":1,"enName":"admin","chnName":"管理员","cno":"CNO000000",
+ * "age":0,"gender":0,"addr":null,"email":"yellowshuo@gmail.com","tel":"13632367100",
+ * "image":null,"roleCode":"RC0000","roleName":"Super Admin","officerCode":"OC0000",
+ * "officerName":"Super Officer","areaCode":"AC0000","areaName":"Super Area","clubNO":null,
+ * "loginName":"admin","loginPwd":"06E5E4578560440152B587E94CDDBB41","joinDate":"06/09/2015",
+ * "createdBy":0,"createdDate":1433869589000,"modifiedBy":0,"modifiedDate":1433869589000,
+ * "status":0,"remark":null,"wechat":"Kail_Huang","eduTitle":"CL"},"status":0}
+ *
+ */
 public class UserBean implements Serializable{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+	@SerializedName("id")
 	private String id =null;
+	@SerializedName("enName")
 	private String enName = null;
+	@SerializedName("chnName")
 	private String chnName = null;
+	@SerializedName("cno")
 	private String cno = null;
+	@SerializedName("age")
 	private int age = 0;
+	@SerializedName("gender")
 	private int gender = 0;
+	@SerializedName("addr")
 	private String addr = null;
+	@SerializedName("email")
 	private String email = null;
+	@SerializedName("tel")
 	private String tel = null;
+	@SerializedName("image")
 	private String image = null;
+	@SerializedName("roleCode")
 	private String roleCode = null;
+	@SerializedName("roleName")
 	private String roleName = null;
+	@SerializedName("officerCode")
 	private String officerCode = null;
+	@SerializedName("officerName")
 	private String officerName = null;
+	@SerializedName("areaCode")
 	private String areaCode = null;
+	@SerializedName("areaName")
 	private String areaName = null;
+	@SerializedName("clubNO")
+	private String clubNO = null;
+	@SerializedName("loginName")
 	private String loginName = null;
+	@SerializedName("loginPwd")
 	private String loginPwd = null;
+	@SerializedName("joinDate")
 	private String joinDate = null;
+	@SerializedName("createdBy")
 	private String createdBy = null;
-	private String createdDate = null;
+	@SerializedName("createdDate")
+	private long createdDate = 0;
+	@SerializedName("modifiedBy")
 	private String modifiedBy = null;
-	private String modifiedDate = null;
+	@SerializedName("modifiedDate")
+	private long modifiedDate = 0;
+	@SerializedName("status")
 	private int status = 0;
+	@SerializedName("remark")
 	private String remark = null;
+	@SerializedName("wechat")
 	private String wechat = null;
+	@SerializedName("eduTitle")
 	private String eduTitle = null;
 	
 	/**
@@ -56,6 +96,7 @@ public class UserBean implements Serializable{
 		email = jobj.optString("email");
 		tel = jobj.optString("tel");
 		image = jobj.optString("image");
+		clubNO = jobj.optString("clubNO");
 		roleCode = jobj.optString("roleCode");
 		roleName = jobj.optString("roleName");
 		officerCode = jobj.optString("officerCode");
@@ -66,9 +107,9 @@ public class UserBean implements Serializable{
 		loginPwd = jobj.optString("loginPwd");
 		joinDate = jobj.optString("joinDate");
 		createdBy = jobj.optString("createdBy");
-		createdDate = jobj.optString("createdDate");
+		createdDate = jobj.optLong("createdDate");
 		modifiedBy = jobj.optString("modifiedBy");
-		modifiedDate = jobj.optString("modifiedDate");
+		modifiedDate = jobj.optLong("modifiedDate");
 		status = jobj.optInt("status");
 		remark = jobj.optString("remark");
 		wechat = jobj.optString("wechat");
@@ -237,11 +278,11 @@ public class UserBean implements Serializable{
 		this.createdBy = createdBy;
 	}
 
-	public String getCreatedDate() {
+	public long getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(String createdDate) {
+	public void setCreatedDate(long createdDate) {
 		this.createdDate = createdDate;
 	}
 
@@ -253,11 +294,11 @@ public class UserBean implements Serializable{
 		this.modifiedBy = modifiedBy;
 	}
 
-	public String getModifiedDate() {
+	public long getModifiedDate() {
 		return modifiedDate;
 	}
 
-	public void setModifiedDate(String modifiedDate) {
+	public void setModifiedDate(long modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
 
@@ -293,6 +334,14 @@ public class UserBean implements Serializable{
 		this.eduTitle = eduTitle;
 	}
 	
+	public String getClubNO() {
+		return clubNO;
+	}
+
+	public void setClubNO(String clubNO) {
+		this.clubNO = clubNO;
+	}
+
 	
 }
 

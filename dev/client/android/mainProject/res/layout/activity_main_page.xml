@@ -27,9 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:orientation="vertical"
-            android:paddingTop="5dp"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp" >
+            android:paddingRight="10dp"
+            android:paddingTop="5dp" >
 
             <TextView
                 android:id="@+id/activity_main_activity_title"
@@ -60,7 +60,6 @@
                 android:textColor="#004f7b"
                 android:textSize="12sp"
                 android:textStyle="italic" />
-
         </LinearLayout>
 
         <View
@@ -69,27 +68,50 @@
             android:background="#003857" />
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/main_page_pull_refresh_list"
+        android:layout_below="@id/activity_main_comment_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:paddingTop="5dp"
         android:background="#ebebeb"
-        android:layout_below="@id/activity_main_comment_layout" >
+        android:cacheColorHint="#00000000"
+        android:divider="#19000000"
+        android:dividerHeight="4dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true" />
+
+    <ScrollView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_main_comment_layout"
+        android:background="#ebebeb"
+        android:paddingTop="5dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-            
-            <include layout="@layout/layout_mainpage_message_item"/>
-            <include layout="@layout/layout_mainpage_message_item_2"/>
-            <include layout="@layout/layout_mainpage_message_item"/>
-            <include layout="@layout/layout_mainpage_message_item_2"/>
-            <include layout="@layout/layout_mainpage_message_item"/>
-            <include layout="@layout/layout_mainpage_message_item_2"/>
-            <include layout="@layout/layout_mainpage_message_item"/>
-            <include layout="@layout/layout_mainpage_message_item_2"/>
-            
+
+            <include layout="@layout/layout_mainpage_message_item" />
+
+            <include layout="@layout/layout_mainpage_message_item_2" />
+
+            <include layout="@layout/layout_mainpage_message_item" />
+
+            <include layout="@layout/layout_mainpage_message_item_2" />
+
+            <include layout="@layout/layout_mainpage_message_item" />
+
+            <include layout="@layout/layout_mainpage_message_item_2" />
+
+            <include layout="@layout/layout_mainpage_message_item" />
+
+            <include layout="@layout/layout_mainpage_message_item_2" />
         </LinearLayout>
     </ScrollView>
 
