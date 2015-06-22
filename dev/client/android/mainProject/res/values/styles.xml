@@ -118,6 +118,29 @@
 	    <item name="android:layout_alignParentRight">true</item>
 	    <item name="android:onClick">onClick</item>
 	</style>
+	
+<!-- login page -->
+	<style name="login_page_input_layout">
+	    <item name="android:layout_width">match_parent</item>
+	    <item name="android:layout_height">43dp</item>
+	    <item name="android:layout_marginLeft">15dp</item>
+	    <item name="android:layout_marginRight">15dp</item>
+	    <item name="android:layout_marginTop">10dp</item>
+	    <item name="android:orientation">horizontal</item>
+	    <item name="android:background">#dadada</item>
+	    <item name="android:paddingBottom">1dp</item>
+	</style>
+	<style name="login_page_label">
+	    <item name="android:layout_width">100dp</item>
+	    <item name="android:layout_height">match_parent</item>
+	    <item name="android:gravity">center_vertical</item>
+	    <item name="android:textColor">#000000</item>
+	    <item name="android:textSize">18sp</item>
+	    <item name="android:background">#ffffff</item>
+	</style>
+	<style name="login_page_edit_text" parent="@style/common_layout_mm">
+	    <item name="android:background">#ffffff</item>
+	</style>
 
 <!-- main page - popup menu style -->
 	<style name="menu_layout">

@@ -1,41 +1,50 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/title_background" >
+    android:background="#ffffff"
+    android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
+    <include layout="@layout/layout_login_title" />
+
+    <LinearLayout style="@style/login_page_input_layout" >
+
+        <TextView
+            style="@style/login_page_label"
+            android:text="@string/login_page_username" />
 
         <EditText
             android:id="@+id/activity_login_username_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="admin"
-            android:ems="10" >
+            style="@style/login_page_edit_text"
+            android:hint="@string/login_page_username"
+            android:text="admin" />
+    </LinearLayout>
 
-        </EditText>
+    <LinearLayout style="@style/login_page_input_layout" >
+
+        <TextView
+            style="@style/login_page_label"
+            android:text="@string/login_page_password" />
 
         <EditText
             android:id="@+id/activity_login_password_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:text="123456"
-            android:inputType="textPassword" />
-        
-        <Button
-            android:id="@+id/activity_login_btn_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="onClick"
-            android:text="login" />
-        
+            style="@style/login_page_edit_text"
+            android:hint="@string/login_page_password"
+            android:inputType="textPassword"
+            android:text="123456" />
     </LinearLayout>
 
-  
+    <Button
+        android:id="@+id/activity_login_btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/selector_main_menu"
+        android:textColor="#ffffff"
+        android:onClick="onClick"
+        android:textSize="18sp"
+        android:text="@string/login_page_login" />
 
-</RelativeLayout>
+</LinearLayout>
