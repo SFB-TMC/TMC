@@ -23,7 +23,7 @@ public class UserInfoVO {
 	/** AGE -- Age **/
 	private int age;
 	
-	/** GENDER -- gender 0-male£»1-female **/
+	/** GENDER -- gender 0-maleï¿½ï¿½1-female **/
 	private int gender;
 	
 	/** ADDR -- address **/
@@ -55,6 +55,9 @@ public class UserInfoVO {
 	
 	/** AREA_NAME -- area name **/
 	private String areaName;
+	
+	/** CLUBNO **/
+	private String clubNO;
 	
 	/** LOGIN_NAME -- login name **/
 	private String loginName;
@@ -209,6 +212,14 @@ public class UserInfoVO {
 
 	public void setAreaName(String areaName) {
 		this.areaName = areaName;
+	}
+
+	public String getClubNO() {
+		return clubNO;
+	}
+
+	public void setClubNO(String clubNO) {
+		this.clubNO = clubNO;
 	}
 
 	public String getLoginName() {

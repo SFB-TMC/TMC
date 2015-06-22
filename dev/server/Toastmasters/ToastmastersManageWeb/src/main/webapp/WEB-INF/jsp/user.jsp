@@ -311,12 +311,35 @@
 	
 	function openUserFrame() {
 		
-		$.modal({
+		<%-- $.modal({
 			title: 'Add User',
-			url: '<%=WEBPATH %>/js/developr.progress-slider.js',
+			url: '<%=WEBPATH %>/tmw/userinfo',
 			useIframe: true,
 			width: 600,
 			height: 400
+		}); --%>
+		$.modal({
+			id: "UserInfo",
+			name: "UserInfo",
+			title: 'Add User',
+			url: '<%=WEBPATH %>/tmw/userinfo',
+			useIframe: true,
+			width: 700,
+			height: 400,
+			buttons: {
+				"Save" : {
+					classes : 'button-icon',
+					click : function () {
+						window.frames['UserInfo'].save();
+					}
+				},
+				"Close" : {
+					classes : 'green-gradient',
+					click : function (win) {
+						win.closeModal();
+					}
+				}
+			}
 		});
 	}
 	</script>

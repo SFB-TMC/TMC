@@ -70,7 +70,6 @@ public class IndexController extends AbstractController {
 		
 		UserInfoVO vo = indexService.queryUserInfoByMap(map);
 		Map<String, Object> model = new HashMap<String, Object>(2);  
-		model.put("success", "true"); 
 		if (vo != null) {
 			model.put("res", "true");
 			// SAVE THE SESSION

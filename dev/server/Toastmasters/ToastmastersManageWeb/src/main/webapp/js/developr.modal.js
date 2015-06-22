@@ -620,7 +620,7 @@
 			// Bloc style
 			// The wrapping div is required because iOS ignores iframe size attributes
 			contentWrapper = '<div style="width:'+settings.width+'px; height:'+settings.height+'px; -webkit-overflow-scrolling:touch; overflow: auto;">'+
-								'<iframe class="modal-iframe" src="'+(settings.url || '')+'" frameborder="0" width="'+settings.width+'" height="'+settings.height+'"'+scrolling+'></iframe>'+
+								'<iframe id=' + settings.id + ' name=' + settings.name + ' class="modal-iframe" src="'+(settings.url || '')+'" frameborder="0" width="'+settings.width+'" height="'+settings.height+'"'+scrolling+'></iframe>'+
 							'</div>';
 		}
 		else

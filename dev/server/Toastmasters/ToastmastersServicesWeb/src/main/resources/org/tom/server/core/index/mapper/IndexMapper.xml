@@ -69,4 +69,20 @@
 		AND 
 			LOGIN_PWD = #{password, jdbcType=VARCHAR}
 	</select>
+	
+	<insert id="insertLoginLog" parameterType="org.tom.server.core.index.domain.LoginLogVO">
+		INSERT INTO LOGIN_LOG (
+			LOGIN_IP,
+			LOGIN_TIME,
+			LOGIN_NAME,
+			DEVICE,
+			STATUS 
+		) VALUES (
+			#{loginIp, jdbcType=VARCHAR},
+			#{loginTime, jdbcType=TIMESTAMP},
+			#{loginName, jdbcType=VARCHAR},
+			#{device, jdbcType=VARCHAR},
+			#{status, jdbcType=DECIMAL}
+		)
+	</insert>
 </mapper>

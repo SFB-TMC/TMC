@@ -163,7 +163,7 @@
 							dataType: "json",  
 							async: false,
 							success: function(data) {
-								if (data.res) {
+								if (data.res == 'true') {
 									document.location.href = '<%=WEBPATH %>/tmw/menu/home';
 								} else {
 									formLogin.clearMessages();

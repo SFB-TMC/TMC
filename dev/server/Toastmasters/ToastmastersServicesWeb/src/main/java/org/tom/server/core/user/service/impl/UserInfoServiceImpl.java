@@ -38,7 +38,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 			return list;
 		}
 		
-		logger.error("分页：用户信息找不到记录！");
+		logger.error("can not query any data!");
 		return null;
 	}
 
@@ -47,7 +47,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 		int count = userInfoMapper.queryUserInfoCountByMap(map);
 		
 		if (count == 0) {
-			logger.error("分页：用户信息找不到记录！");
+			logger.error("can not query any data!");
 		}
 		return count;
 	}

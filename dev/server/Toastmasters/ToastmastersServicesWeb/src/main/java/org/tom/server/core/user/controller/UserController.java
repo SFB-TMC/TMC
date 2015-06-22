@@ -15,12 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
+import org.tom.server.basic.util.CommonConstants;
 import org.tom.server.basic.vo.PageJsonBean;
 import org.tom.server.core.user.domain.UserInfoVO;
 import org.tom.server.core.user.service.UserInfoService;
 
 @Controller
-@RequestMapping("/tmw")
+@RequestMapping(CommonConstants.URL_PREFIX)
 public class UserController extends AbstractController {
 	
 	/** Used in pagination **/

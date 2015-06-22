@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tom.server.core.code.mapper.CodeLibraryMapper">
+	<resultMap id="CodeLibraryResultMap" type="org.tom.server.core.code.domain.CodeLibraryVO">
+		<id column="ID" jdbcType="DECIMAL" property="id" />
+		<result column="CODENO" jdbcType="VARCHAR" property="codeNO" />
+		<result column="ITEMNO" jdbcType="VARCHAR" property="itemNO" />
+		<result column="ITEMNAME" jdbcType="VARCHAR" property="itemName" />
+		<result column="CREATED_BY" jdbcType="DECIMAL" property="createdBy" />
+		<result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+		<result column="MODIFIED_BY" jdbcType="DECIMAL" property="modifiedBy" />
+		<result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+		<result column="STATUS" jdbcType="DECIMAL" property="status" />
+		<result column="REMARK" jdbcType="VARCHAR" property="remark" />
+	</resultMap>
+	
+	<!-- Without image -->
+	<sql id="CodeLibraryColumnList">
+		ID, CODENO, ITEMNO, ITEMNAME, CREATED_BY, CREATED_DATE, 
+			MODIFIED_BY, MODIFIED_DATE, STATUS, REMARK
+	</sql>
+	
+	<select id="queryRoleInfoByMap" parameterType="java.util.Map" resultMap="CodeLibraryResultMap">
+		SELECT
+			<include refid="CodeLibraryColumnList" />
+		FROM 
+			CODE_LIBRARY
+		WHERE 
+			CODENO = 'ROLEINFO' 
+		AND 
+			STATUS = 0
+		<choose>
+			<when test="roleCode == 'RC0001'">
+				AND ITEMNO &lt;&gt; 'RC0000' AND ITEMNO &lt;&gt; 'RC0001'
+			</when>
+			<when test="roleCode == 'RC0000'">
+				AND ITEMNO &lt;&gt; 'RC0000'
+			</when>
+			<otherwise>
+				AND 0 = 1
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="queryOfficerListByMap" parameterType="java.util.Map" resultMap="CodeLibraryResultMap">
+		SELECT
+			<include refid="CodeLibraryColumnList" />
+		FROM 
+			CODE_LIBRARY
+		WHERE 
+			CODENO = 'OFFICERINFO' 
+		AND 
+			STATUS = 0 
+		<choose>
+			<when test="roleCode == 'RC0001'">
+				AND ITEMNO IN ('OC9999')
+			</when>
+			<when test="roleCode == 'RC0000'">
+				AND ITEMNO &lt;&gt; 'OC0000'
+			</when>
+			<otherwise>
+				AND 0 = 1
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="queryAreaListByMap" parameterType="java.util.Map" resultMap="CodeLibraryResultMap">
+		SELECT
+			<include refid="CodeLibraryColumnList" />
+		FROM 
+			CODE_LIBRARY
+		WHERE 
+			CODENO = 'AREAINFO' 
+		AND 
+			STATUS = 0 
+		AND 
+			ITEMNO &lt;&gt; 'AC0000'
+	</select>
+</mapper>

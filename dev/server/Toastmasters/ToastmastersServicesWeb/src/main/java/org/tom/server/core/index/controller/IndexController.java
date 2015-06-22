@@ -1,5 +1,6 @@
 package org.tom.server.core.index.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,12 +19,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
+import org.tom.server.basic.util.CommonConstants;
 import org.tom.server.basic.util.EncryptPwd;
+import org.tom.server.core.index.domain.LoginLogVO;
 import org.tom.server.core.index.service.IndexService;
 import org.tom.server.core.user.domain.UserInfoVO;
 
 @Controller
-@RequestMapping("/tmw")
+@RequestMapping(CommonConstants.URL_PREFIX)
 public class IndexController extends AbstractController {
 	
 	@Autowired
@@ -45,7 +48,9 @@ public class IndexController extends AbstractController {
 	@ResponseBody
 	public Map<String, Object> login(
 			@RequestParam(value="username", required=true) String username,
-			@RequestParam(value="password", required=true) String password, HttpSession httpSession) {
+			@RequestParam(value="password", required=true) String password, 
+			@RequestParam(value="device", required=true) String device, 
+			HttpSession httpSession, HttpServletRequest request) {
 		
 		// Encrypt password
 		String encryptPwd = EncryptPwd.encrypt(password);
@@ -58,9 +63,21 @@ public class IndexController extends AbstractController {
 		if (userInfoVO != null) {
 			resultMap.put("status", 0);
 			resultMap.put("data", userInfoVO);
+			
+			String loginIp = request.getRemoteHost();
+			Date date = new Date();
+			int status = 0;
+			LoginLogVO llvo = new LoginLogVO();
+			llvo.setDevice(device);
+			llvo.setLoginIp(loginIp);
+			llvo.setLoginName(username);
+			llvo.setLoginTime(date);
+			llvo.setStatus(status);
+			// insert log
+			indexService.insertLoginLog(llvo);
 		} else {
 			resultMap.put("status", -1);
-			resultMap.put("data", "µ«¬º ß∞‹£¨«ÎºÏ≤È”√ªß√˚√‹¬Î£°");
+			resultMap.put("data", "Can't find any data!");
 		}
 		
 		return resultMap;

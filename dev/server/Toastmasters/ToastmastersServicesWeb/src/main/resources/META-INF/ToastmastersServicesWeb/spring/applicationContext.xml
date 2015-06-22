@@ -68,4 +68,14 @@
  			<value>.jsp</value>
  		</property>
  	</bean>
+ 	
+ 	<bean id="propertySources" class="org.tom.server.basic.util.PropertiesHandler">
+		<property name="ignoreResourceNotFound" value="true" /> 
+    	<property name="locations">
+			<list>
+				<value>classpath:META-INF/ToastmastersServicesWeb/config/config.properties</value>
+				<value>file:${user.home}/.settings/tom-config.properties</value>
+			</list>
+		</property>
+	</bean>
 </beans>

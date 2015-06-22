@@ -5,20 +5,20 @@ import java.security.MessageDigest;
 public class EncryptPwd {
 
 	/**
-	 * 对字符串进行加密处理
+	 * encrypt string
 	 * 
 	 * @param strString
-	 * @return 加密后的字符串
+	 * @return 
 	 */
 	public static String encrypt(String strString) {
 		if (strString != null) {
 			strString += "pwd";
 			try {
-				// 创建MD5算法的信息摘要
+				// create md5
 				MessageDigest md = MessageDigest.getInstance("MD5");
 				byte[] results = md.digest(strString.getBytes());
 
-				// 将得到的字节数组变成字符串返回
+				// char array transfer to 16 String
 				String resultString = byteArrayToHexString(results);
 				return resultString.toUpperCase();
 			} catch (Exception ex) {
@@ -29,7 +29,7 @@ public class EncryptPwd {
 	}
 
 	/**
-	 * 字符数组转十六位字符串
+	 * char array transfer to 16 String
 	 * @param b
 	 * @return
 	 */

@@ -19,6 +19,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 import org.tom.server.basic.util.SessionConstants;
 import org.tom.server.basic.vo.PageJsonBean;
+import org.tom.server.core.club.domain.ClubInfoVO;
+import org.tom.server.core.club.service.ClubInfoService;
+import org.tom.server.core.code.domain.CodeLibraryVO;
+import org.tom.server.core.code.service.CodeLibraryService;
 import org.tom.server.core.menu.domain.MenuInfoVO;
 import org.tom.server.core.user.domain.UserInfoVO;
 import org.tom.server.core.user.service.UserInfoService;
@@ -32,6 +36,12 @@ public class UserController extends AbstractController {
 	
 	@Autowired
 	private UserInfoService userInfoService;
+	
+	@Autowired
+	private CodeLibraryService codeLibraryService;
+	
+	@Autowired
+	private ClubInfoService clubInfoService;
 	
 	/**
 	 * jump to user page
@@ -72,10 +82,38 @@ public class UserController extends AbstractController {
 		return model;
 	}
 	
-	@RequestMapping(value = "/userinfo", method = RequestMethod.POST)
-	public String userinfo(Map<String, Object> model) {
+	@RequestMapping(value = "/userinfo", method = RequestMethod.GET)
+	public String userinfo(Map<String, Object> model, HttpSession httpSession) {
 		
-		return null;
+		// Gain the user information
+		UserInfoVO userInfo = (UserInfoVO)httpSession.getAttribute(SessionConstants.LOGIN_SESSION_ID);
+		String curRoleCode = userInfo.getRoleCode(); 
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("roleCode", curRoleCode);
+		List<CodeLibraryVO> roleList = codeLibraryService.queryRoleInfoByMap(map);
+		List<CodeLibraryVO> officerList = codeLibraryService.queryOfficerListByMap(map);
+		List<CodeLibraryVO> areaList = codeLibraryService.queryAreaListByMap(map);
+		map.clear();
+		List<ClubInfoVO> clubList = clubInfoService.queryClubInfoListByMap(map);
+		if (roleList == null) {
+			roleList = new ArrayList<CodeLibraryVO>();
+		}
+		if (officerList == null) {
+			officerList = new ArrayList<CodeLibraryVO>();
+		}
+		if (areaList == null) {
+			areaList = new ArrayList<CodeLibraryVO>();
+		}
+		if (clubList == null) {
+			clubList = new ArrayList<ClubInfoVO>();
+		}
+		
+		model.put("roleList", roleList);
+		model.put("officerList", officerList);
+		model.put("areaList", areaList);
+		model.put("clubList", clubList);
+		
+		return "userInfo";
 	}
 
 	@Override

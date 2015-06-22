@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tom.server.core.club.mapper.ClubInfoMapper">
+	<resultMap id="ClubInfoResultMap" type="org.tom.server.core.club.domain.ClubInfoVO">
+		<id column="ID" jdbcType="DECIMAL" property="id" />
+		<result column="CLUBNO" jdbcType="VARCHAR" property="clubNO" />
+		<result column="CLUBNAME" jdbcType="VARCHAR" property="clubName" />
+		<result column="CLUBINTRO" jdbcType="VARCHAR" property="clubIntro" />
+		<result column="FOUND_DATE" jdbcType="VARCHAR" property="foundDate" />
+		<result column="CLUBIMAGE" property="clubImage" javaType="byte[]" jdbcType="BLOB" typeHandler="org.apache.ibatis.type.BlobTypeHandler" />
+		<result column="CREATED_BY" jdbcType="DECIMAL" property="createdBy" />
+		<result column="CREATED_DATE" jdbcType="TIMESTAMP" property="createdDate" />
+		<result column="MODIFIED_BY" jdbcType="DECIMAL" property="modifiedBy" />
+		<result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+		<result column="STATUS" jdbcType="DECIMAL" property="status" />
+		<result column="REMARK" jdbcType="VARCHAR" property="remark" />
+	</resultMap>
+	
+	<sql id="ClubInfoColumnList">
+		ID, CLUBNO, CLUBNAME, CLUBINTRO, FOUND_DATE, CLUBIMAGE, 
+			CREATED_BY, CREATED_DATE, MODIFIED_BY, MODIFIED_DATE, STATUS, REMARK
+	</sql>
+	
+	<select id="queryClubInfoListByMap" parameterType="java.util.Map" resultMap="ClubInfoResultMap">
+		SELECT 
+			<include refid="ClubInfoColumnList" />
+		FROM 
+			CLUB_INFO
+		WHERE 
+			CLUBNO &lt;&gt; 'CN000000'
+		AND 
+			STATUS = 0
+	</select>
+</mapper>

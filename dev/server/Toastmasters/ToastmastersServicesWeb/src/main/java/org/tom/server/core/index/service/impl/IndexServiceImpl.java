@@ -8,6 +8,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.tom.server.core.index.domain.LoginLogVO;
 import org.tom.server.core.index.mapper.IndexMapper;
 import org.tom.server.core.index.service.IndexService;
 import org.tom.server.core.user.domain.UserInfoVO;
@@ -53,6 +54,18 @@ public class IndexServiceImpl implements IndexService {
 		
 		res = true;
 		return res;
+	}
+	
+	public boolean insertLoginLog(LoginLogVO loginLogVO) {
+		
+		try {
+			indexMapper.insertLoginLog(loginLogVO);
+		} catch (SQLException e) {
+			logger.error(e.getLocalizedMessage());
+			return false;
+		}
+		
+		return true;
 	}
 
 }

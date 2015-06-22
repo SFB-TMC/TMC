@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.tom.server.core.activity.mapper.ActivityInfoMapper">
+	
+	<resultMap type="org.tom.server.core.activity.domain.ActivityInfoVO" id="ActivityResultMap">
+		<id column="ID" jdbcType="DECIMAL" property="id" />
+		<result column="TITLE" jdbcType="VARCHAR" property="title" />
+		<result column="TIME" jdbcType="VARCHAR" property="time" />
+		<result column="ADDR" jdbcType="VARCHAR" property="addr" />
+		<result column="IMG_URL" jdbcType="VARCHAR" property="imgURL" />
+		<result column="SPONSOR" jdbcType="DECIMAL" property="sponsor" />
+		<result column="CLUBNO" jdbcType="VARCHAR" property="clubNO" />
+		<result column="CREATED_BY" jdbcType="DECIMAL" property="createdBy" />
+		<result column="CREATED_DATE" jdbcType="VARCHAR" property="createdDate" />
+		<result column="MODIFIED_BY" jdbcType="DECIMAL" property="modifiedBy" />
+		<result column="MODIFIED_DATE" jdbcType="VARCHAR" property="modifiedDate" />
+		<result column="STATUS" jdbcType="DECIMAL" property="status" />
+		<result column="REMARK" jdbcType="VARCHAR" property="remark" />
+		<result column="TYPE" jdbcType="DECIMAL" property="type" />
+	</resultMap>
+	
+	<select id="gainRecommandListByMap" parameterType="java.util.Map" resultMap="ActivityResultMap">
+		SELECT 
+			B.ID, B.TITLE, B.TIME, B.ADDR, B.IMG_URL, B.SPONSOR, B.CLUBNO, B.CREATED_BY, 
+			B.CREATED_DATE, B.MODIFIED_BY, B.MODIFIED_DATE, B.STATUS, B.REMARK, A.TYPE 
+		FROM 
+			RECOMMAND_LIST A
+		INNER JOIN
+			ACTIVITY_INFO B
+		ON 
+			A.RECID = B.ID
+		WHERE 
+			B.CLUBNO = #{clubNO, jdbcType=VARCHAR} 
+		AND 
+			A.STATUS = 0
+		AND 
+			B.STATUS = 0
+		ORDER BY 
+			A.LEVEL 
+		ASC
+		LIMIT #{count, jdbcType=DECIMAL}
+	</select>
+</mapper>
