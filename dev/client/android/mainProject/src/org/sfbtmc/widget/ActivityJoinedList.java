@@ -36,7 +36,7 @@ public class ActivityJoinedList extends PopupWindow implements OnClickListener {
 		// 点back键和其他地方使其消失,设置了这个才能触发OnDismisslistener ，设置其他控件变化等操作
 		this.setBackgroundDrawable(dw);
 		// 设置SelectPicPopupWindow弹出窗体动画效果
-		this.setAnimationStyle(R.style.AnimationPreview);
+//		this.setAnimationStyle(R.style.AnimationPreview);
 
 	}
 
