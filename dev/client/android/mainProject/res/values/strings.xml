@@ -12,5 +12,7 @@
     <string name="login_page_username">Username</string>
     <string name="login_page_password">Password</string>
     <string name="login_page_login">Log In</string>
+    <string name="login_page_login_skip">Skip</string>
+    
 
 </resources>

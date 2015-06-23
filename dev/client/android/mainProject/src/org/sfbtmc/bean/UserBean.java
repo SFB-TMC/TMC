@@ -22,61 +22,61 @@ public class UserBean implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	@SerializedName("id")
-	private String id =null;
+	private String id ="";
 	@SerializedName("enName")
-	private String enName = null;
+	private String enName = "";
 	@SerializedName("chnName")
-	private String chnName = null;
+	private String chnName = "";
 	@SerializedName("cno")
-	private String cno = null;
+	private String cno = "";
 	@SerializedName("age")
 	private int age = 0;
 	@SerializedName("gender")
 	private int gender = 0;
 	@SerializedName("addr")
-	private String addr = null;
+	private String addr = "";
 	@SerializedName("email")
-	private String email = null;
+	private String email = "";
 	@SerializedName("tel")
-	private String tel = null;
+	private String tel = "";
 	@SerializedName("image")
-	private String image = null;
+	private String image = "";
 	@SerializedName("roleCode")
-	private String roleCode = null;
+	private String roleCode = "";
 	@SerializedName("roleName")
-	private String roleName = null;
+	private String roleName = "";
 	@SerializedName("officerCode")
-	private String officerCode = null;
+	private String officerCode = "";
 	@SerializedName("officerName")
-	private String officerName = null;
+	private String officerName = "";
 	@SerializedName("areaCode")
-	private String areaCode = null;
+	private String areaCode = "";
 	@SerializedName("areaName")
-	private String areaName = null;
+	private String areaName = "";
 	@SerializedName("clubNO")
-	private String clubNO = null;
+	private String clubNO = "";
 	@SerializedName("loginName")
-	private String loginName = null;
+	private String loginName = "";
 	@SerializedName("loginPwd")
-	private String loginPwd = null;
+	private String loginPwd = "";
 	@SerializedName("joinDate")
-	private String joinDate = null;
+	private String joinDate = "";
 	@SerializedName("createdBy")
-	private String createdBy = null;
+	private String createdBy = "";
 	@SerializedName("createdDate")
 	private long createdDate = 0;
 	@SerializedName("modifiedBy")
-	private String modifiedBy = null;
+	private String modifiedBy = "";
 	@SerializedName("modifiedDate")
 	private long modifiedDate = 0;
 	@SerializedName("status")
 	private int status = 0;
 	@SerializedName("remark")
-	private String remark = null;
+	private String remark = "";
 	@SerializedName("wechat")
-	private String wechat = null;
+	private String wechat = "";
 	@SerializedName("eduTitle")
-	private String eduTitle = null;
+	private String eduTitle = "";
 	
 	/**
 	 * next i will use gson lib

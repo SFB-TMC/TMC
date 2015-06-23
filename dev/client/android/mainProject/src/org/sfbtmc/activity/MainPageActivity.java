@@ -69,11 +69,15 @@ public class MainPageActivity extends FragmentActivity implements
 			}
 			
 		});
+		
+		
+		
 		mainPullList.setOnItemClickListener(new OnItemClickListener(){
 			@Override
 			public void onItemClick(AdapterView<?> adapter, View view, int position,
 					long id) {
-				MainPageListBean listBean = mainPageMsgBean.getMsgBeanList().get(position);
+				//这里的position是从1开始的,和原生的listView不一样.因为pullListView 用了一个headerView
+				MainPageListBean listBean = mainPageMsgBean.getMsgBeanList().get(position - 1);
 				viewDetailMainPageListMsg(listBean);
 			}
 		});

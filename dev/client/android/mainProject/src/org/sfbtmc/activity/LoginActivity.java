@@ -97,5 +97,8 @@ public class LoginActivity extends Activity implements OnClickListener{
 		if(R.id.activity_login_btn_login == i){
 			login();
 		}
+		if(R.id.activity_login_btn_login_skip == i){
+			toMainActivity();
+		}
 	}
 }

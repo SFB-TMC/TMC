@@ -5,7 +5,7 @@ import org.sfbtmc.bean.UserBean;
 public class TmcManager {
 	private static TmcManager instance;
 	
-	private UserBean userBean;
+	private UserBean userBean = new UserBean();
 
 	private TmcManager(){
 		
