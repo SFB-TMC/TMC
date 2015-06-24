@@ -46,5 +46,19 @@
         android:onClick="onClick"
         android:textSize="18sp"
         android:text="@string/login_page_login" />
+    
+    <Button
+        android:id="@+id/activity_login_btn_login_skip"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/selector_main_menu"
+        android:textColor="#ffffff"
+        android:onClick="onClick"
+        android:textSize="18sp"
+        android:text="@string/login_page_login_skip" />
 
 </LinearLayout>

@@ -6,6 +6,7 @@ import org.sfbtmc.TmcManager;
 import org.sfbtmc.bean.UserBean;
 import org.sfbtmc.net.TmcClient;
 import org.sfbtmc.net.TmcJsonHttpResponseHandler;
+import org.sfbtmc.net.TmcServerConfig;
 import org.sfbtmc.util.TmcLogUtils;
 
 import android.app.Activity;
@@ -46,7 +47,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 		param.put("password", etPass.getText().toString());
 		param.put("device", "Android");
 		
-		client.tmcPost("http://54.64.18.163:8080/ToastmastersServicesWeb/tmw/login", param , new TmcJsonHttpResponseHandler(){
+		client.tmcPost(TmcServerConfig.BASE_URL + "tmw/login", param , new TmcJsonHttpResponseHandler(){
 			@Override
 			public void onTmcSuccess(int statusCode, JSONObject response) {
 				super.onTmcSuccess(statusCode, response);
@@ -95,6 +96,9 @@ public class LoginActivity extends Activity implements OnClickListener{
 		int i = arg0.getId();
 		if(R.id.activity_login_btn_login == i){
 			login();
+		}
+		if(R.id.activity_login_btn_login_skip == i){
+			toMainActivity();
 		}
 	}
 }
